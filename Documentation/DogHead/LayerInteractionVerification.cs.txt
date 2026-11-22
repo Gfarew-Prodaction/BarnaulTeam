@@ -1,0 +1,71 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Grabbers;
+using HurricaneVR.Framework.Core.UI;
+using HurricaneVR.Framework.Shared;
+using InteracrSystem;
+[InitializeOnLoad]
+public static class LayerInteractionVerification
+{
+ const string Key="LayerInteractionVerification.Running";
+ static double deadline;
+ static LayerInteractionVerification(){EditorApplication.delayCall+=Begin;}
+ static void Begin(){
+  if(SessionState.GetBool(Key,false)&&EditorApplication.isPlaying){deadline=EditorApplication.timeSinceStartup+60;EditorApplication.update+=Tick;return;}
+  if(!File.Exists("/tmp/layer-test.request")||EditorApplication.isPlaying)return;
+  File.Delete("/tmp/layer-test.request");File.WriteAllText("/tmp/layer-test.results","");SessionState.SetBool(Key,true);deadline=EditorApplication.timeSinceStartup+60;EditorApplication.update+=Tick;EditorApplication.EnterPlaymode();
+ }
+ static void Check(bool b,string text){if(!b)throw new Exception(text);File.AppendAllText("/tmp/layer-test.results","PASS "+text+"\n");}
+ static void Call(object o,string name)=>o.GetType().GetMethod(name,BindingFlags.Instance|BindingFlags.NonPublic).Invoke(o,null);
+ static void Hover(HVRGrabberBase h,HVRGrabbable g)=>typeof(HVRGrabberBase).GetProperty("HoverTarget").SetValue(h,g);
+ static void Tick(){
+  if(!EditorApplication.isPlaying||EditorApplication.isCompiling||Time.time<1)return;
+  if(EditorApplication.timeSinceStartup>deadline){Finish("FAIL timeout");return;}
+  EditorApplication.update-=Tick;
+  try{Run();Finish("SUCCESS");}catch(Exception ex){Finish("FAIL "+ex);}
+ }
+ static void Finish(string result){File.AppendAllText("/tmp/layer-test.results",result+"\n");SessionState.SetBool(Key,false);EditorApplication.update-=Tick;EditorApplication.ExitPlaymode();}
+ static void Run(){
+  var root=GameObject.Find("Dog Head · Layer Model");var control=root.GetComponent<LayerModelController>();var chooser=root.GetComponent<ChoiceLayer>();
+  var panel=(Canvas)typeof(LayerModelController).GetField("_panel",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(control);
+  var module=InspectionVRInput.EnsureModule();var events=module.GetComponent<EventSystem>();
+  Check(events.GetComponents<BaseInputModule>().All(m=>m==module||!m.enabled),"HurricaneVR owns UI input; competing module disabled");
+  Check(!panel.GetComponent<GraphicRaycaster>().ignoreReversedGraphics,"layer panel accepts rays from both sides");
+  Check(module.UICanvases.Contains(panel),"layer Canvas registered in HVR module");
+  Check(module.Pointers.Count(p=>p&&p.GetComponent<CrispHandRay>())>=2,"both controller pointers initialized");
+  var oldPointers=module.Pointers.ToArray();module.Pointers.Clear();
+  var test=new GameObject("Verification pointer",typeof(Camera),typeof(LineRenderer));var pointer=test.AddComponent<HVRUIPointer>();pointer.InputModule=module;Call(pointer,"Start");pointer.Camera.enabled=false;pointer.Camera.nearClipPlane=.001f;module.AddPointer(pointer);
+  var buttons=panel.GetComponentsInChildren<Button>();Check(buttons.Length==4,"four active layer buttons");
+  foreach(var side in new[]{HVRHandSide.Left,HVRHandSide.Right})foreach(float direction in new[]{-1f,1f})for(int i=0;i<4;i++){
+   pointer.HandSide=side;var button=buttons[i];int clicks=0;UnityEngine.Events.UnityAction listener=()=>clicks++;button.onClick.AddListener(listener);
+   pointer.transform.position=button.transform.position+panel.transform.forward*(.6f*direction);pointer.transform.LookAt(button.transform.position);
+   Canvas.ForceUpdateCanvases();HVRController.SetButtonState(side,HVRButtons.Trigger,default);module.Process();
+   var hit=pointer.CurrentUIElement?pointer.CurrentUIElement.GetComponentInParent<Button>():null;
+   Check(hit==button,"ray hits layer "+i+" / "+side+" / side "+direction);
+   HVRController.SetButtonState(side,HVRButtons.Trigger,new HVRButtonState{Active=true,JustActivated=true});module.Process();
+   HVRController.SetButtonState(side,HVRButtons.Trigger,new HVRButtonState{JustDeactivated=true});module.Process();
+   Check(clicks==1,"trigger clicks layer "+i+" / "+side+" / side "+direction);button.onClick.RemoveListener(listener);
+   Check(root.transform.Find(i==0?"Skin":i==1?"Muscles":i==2?"Bones and teeth":"Brain").gameObject.activeSelf,"layer switch executes "+i);
+   HVRController.SetButtonState(side,HVRButtons.Trigger,default);
+  }
+  module.Pointers.Clear();foreach(var p in oldPointers)module.Pointers.Add(p);UnityEngine.Object.Destroy(test);
+  chooser.ShowMuscles();var visual=root.GetComponentsInChildren<ElementInteractionVisuals>().First(v=>v.GroupId=="dog_temporalis");var item=visual.GetComponent<HVRGrabbable>();
+  var hand=UnityEngine.Object.FindAnyObjectByType<HVRHandGrabber>();var force=hand.ForceGrabber;
+  item.RequireLineOfSight=false;hand.AllowHovering=true;hand.AllowGrabbing=true;Hover(hand,item);item.HoverEnter.Invoke(hand,item);Call(visual,"LateUpdate");
+  Check(visual.IsHoverHighlighted,"eligible hand grab target is green");
+  hand.AllowGrabbing=false;Call(visual,"LateUpdate");Check(!visual.IsHoverHighlighted,"blocked hand immediately loses green while hover event remains");
+  hand.AllowGrabbing=true;Call(visual,"LateUpdate");Check(visual.IsHoverHighlighted,"green restores when same target becomes grabbable");
+  typeof(HVRGrabbable).GetProperty("IsBeingForcedGrabbed").SetValue(item,true);Call(visual,"LateUpdate");Check(!visual.IsHoverHighlighted,"in-flight item is not green");typeof(HVRGrabbable).GetProperty("IsBeingForcedGrabbed").SetValue(item,false);
+  Hover(hand,null);Call(visual,"LateUpdate");Check(!visual.IsHoverHighlighted,"leaving grab candidate clears green");
+  Check(force,"force grabber available");force.AllowGrabbing=true;force.AllowHovering=true;force.RequireLineOfSight=false;force.Inputs.CanDistanceGrab=true;Hover(force,item);item.HoverEnter.Invoke(force,item);Call(visual,"LateUpdate");
+  Check(visual.IsHoverHighlighted,"eligible distance grab target is green");force.Inputs.CanDistanceGrab=false;Call(visual,"LateUpdate");Check(!visual.IsHoverHighlighted,"disabled distance grab does not leave false green");force.Inputs.CanDistanceGrab=true;Hover(force,null);
+  var pair=root.GetComponentsInChildren<ElementInteractionVisuals>().First(v=>v!=visual&&v.GroupId==visual.GroupId);item.HandGrabbers.Add(hand);Call(visual,"LateUpdate");Call(pair,"LateUpdate");Check(!visual.IsHoverHighlighted&&pair.IsRelatedHighlighted,"held item loses green while its paired part remains highlighted");item.HandGrabbers.Clear();
+ }
+}

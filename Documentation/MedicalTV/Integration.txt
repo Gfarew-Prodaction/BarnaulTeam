@@ -1,0 +1,18 @@
+Medical wall TV integration
+
+Source: Medical_TV_Black_FBX_Textures.zip supplied by the user.
+Imported to Assets/Models/ClinicFurniture/Medical_TV_Black_FBX; prefab in Assets/Models/ClinicFurniture/Prefabs/Medical_TV_Black.prefab.
+Six URP materials, OpenGL tangent-space normal map, linear metallic/smoothness packed textures, 4 collision meshes. Original FBX is preserved.
+
+Physical televisions are saved in SampleScene and PracticeScene at (.5,1.62,-2.22), scale 1.55; width approximately 1.88 m. Rear bracket stays inside the room; TV sits above the anatomy/assembly work area. The front display anchor is calculated from the real display mesh, with a 4 mm front offset to avoid z-fighting. UI is fitted inside the display without changing its aspect ratio.
+
+MedicalTVScreen keeps a stack of screen pages: study navigation, learning, practice dashboard, controls help. Opening help hides the previous page; closing restores it. Learning completion returns to study navigation. TV UI stays fixed to the wall when the player moves. Tutorial world arrows, object cards and the research computer remain near the relevant objects.
+
+Study: navigation, workflow overview, Y / X / A reminders, Learning, Controls and Main menu buttons.
+Learning: all 25 existing steps in a landscape layout, task feedback, Next / Back / Skip step / Controls / Main menu. Automatic movement of the learning window is disabled when mounted on a TV.
+Practice: selected difficulty/set, installed count, time, mistakes, feedback and hints, Restart / Controls / Main menu.
+Controls help: three pages with readable text, forward/back navigation and Close.
+
+TV-local dark medical palette, white text and turquoise accents. Pointer proximity includes the TV, and HurricaneVR UI ray distance is at least 5 m so wall buttons can be reached from both work areas.
+
+Main menu Startup and object interaction/inspection content retain their existing dedicated surfaces.

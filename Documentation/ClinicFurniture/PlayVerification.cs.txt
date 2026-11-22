@@ -1,0 +1,41 @@
+using System;using System.IO;using System.Linq;using System.Collections;using System.Reflection;
+using UnityEditor;using UnityEditor.SceneManagement;using UnityEngine;using UnityEngine.UI;using UnityEngine.SceneManagement;using InteracrSystem;using HurricaneVR.Framework.Core;using HurricaneVR.Framework.Core.UI;
+[InitializeOnLoad]public static class ClinicVerification
+{
+ const string Key="Clinic.Verify";static IEnumerator run;static double next,deadline;
+ static ClinicVerification(){EditorApplication.update+=Begin;}
+ static void Begin(){if(SessionState.GetBool(Key,false)&&EditorApplication.isPlaying){Start();return;}if(!File.Exists("/tmp/clinic-test.request")||EditorApplication.isCompiling||EditorApplication.isPlaying||Lightmapping.isRunning)return;File.Delete("/tmp/clinic-test.request");EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");File.WriteAllText("/tmp/clinic-test.txt","");SessionState.SetBool(Key,true);Start();EditorApplication.EnterPlaymode();}
+ static void Start(){EditorApplication.update-=Begin;run=Run();next=0;deadline=EditorApplication.timeSinceStartup+120;EditorApplication.update+=Tick;}
+ static void Tick(){if(!EditorApplication.isPlaying||Time.time<1||EditorApplication.timeSinceStartup<next)return;try{if(EditorApplication.timeSinceStartup>deadline)throw new Exception("Timeout");if(!run.MoveNext()){Finish("SUCCESS");return;}next=EditorApplication.timeSinceStartup+(run.Current is float f?f:0);}catch(Exception e){Finish("FAIL "+e);}}
+ static void Finish(string t){File.AppendAllText("/tmp/clinic-test.txt",t+"\n");SessionState.SetBool(Key,false);EditorApplication.update-=Tick;EditorApplication.ExitPlaymode();}
+ static void Check(bool b,string s){if(!b)throw new Exception(s);File.AppendAllText("/tmp/clinic-test.txt","PASS "+s+"\n");}
+ static T Field<T>(object o,string name)=>(T)o.GetType().GetField(name,BindingFlags.Instance|BindingFlags.NonPublic).GetValue(o);
+ static GameObject Find(string name)=>UnityEngine.Object.FindObjectsByType<Transform>(FindObjectsInactive.Include,FindObjectsSortMode.None).First(t=>t.name==name).gameObject;
+ static void Materials(){var roots=UnityEngine.Object.FindObjectsByType<Transform>().Where(t=>ClinicFurnitureSetup.Names.Contains(t.name)).ToArray();foreach(var root in roots){Check(root.GetComponentsInChildren<Renderer>().Where(r=>r.enabled).All(r=>r.sharedMaterials.All(m=>m&&m.shader&&m.shader.name=="Universal Render Pipeline/Lit")),root.name+": visible meshes use URP materials");Check(root.GetComponentsInChildren<Renderer>().Where(r=>r.name.StartsWith("UCX")).All(r=>!r.enabled),root.name+": collision meshes hidden");Check(root.GetComponentsInChildren<Collider>().Any(c=>c.enabled),root.name+": physical collision exists");}}
+ static IEnumerator Run()
+ {
+  Check(ClinicFurnitureSetup.Names.All(n=>GameObject.Find(n)),"all six assets persisted in study scene");Materials();Check(LightmapSettings.lightmaps.Length>0,"study baked lighting present");
+  var model=Find("Dog Head · Layer Model");var choice=model.GetComponent<ChoiceLayer>();var control=model.GetComponent<LayerModelController>();var panel=Field<Canvas>(control,"_panel");var buttons=panel.GetComponentsInChildren<Button>();Check(buttons.Length==4,"terminal has four layer buttons");Check(Field<Transform>(control,"_table").name=="Vet_Table","model control uses new veterinary table");Check(HVRInputModule.Instance&&HVRInputModule.Instance.UICanvases.Contains(panel),"terminal canvas registered with HurricaneVR UI");
+  for(int i=0;i<4;i++){buttons[i].onClick.Invoke();bool bones=model.transform.Find("Bones and teeth").gameObject.activeSelf,muscles=model.transform.Find("Muscles").gameObject.activeSelf,skin=model.transform.Find("Skin").gameObject.activeSelf,brain=model.transform.Find("Brain").gameObject.activeSelf;Check(i==0?skin&&!bones&&!muscles&&!brain:i==1?bones&&muscles&&!skin&&!brain:i==2?bones&&!skin&&!muscles&&!brain:brain&&!bones&&!skin&&!muscles,"terminal layer button "+i+" changes the model");}
+  choice.ShowBones();yield return .2f;
+  var tray=UnityEngine.Object.FindAnyObjectByType<ElementTray>();var slots=Field<Transform[]>(tray,"_slots");Check(slots.Length==4&&slots.All(s=>s),"four tray places preserved");
+  var parts=model.transform.Find("Bones and teeth").GetComponentsInChildren<OnMoveBackItem>().Take(4).ToArray();
+  for(int i=0;i<4;i++){parts[i].PrepareForGrab();parts[i].transform.position=slots[i].position+Vector3.up*.14f;Physics.SyncTransforms();parts[i].OnReleasedItem(null,parts[i].GetComponent<HVRGrabbable>());}
+  yield return .9f;Check(Field<OnMoveBackItem[]>(tray,"_occupants").Count(p=>p)==4,"all four tray places accept parts");Check(parts.All(p=>p.GetComponent<Rigidbody>().isKinematic),"tray parks parts without falling");
+  var station=UnityEngine.Object.FindAnyObjectByType<ElementInspectionStation>();var piece=parts[0];piece.PrepareForGrab();piece.transform.position=station.GetComponent<BoxCollider>().bounds.center;Physics.SyncTransforms();piece.OnReleasedItem(null,piece.GetComponent<HVRGrabbable>());yield return .9f;
+  Check(station.CurrentElement==piece.GetComponent<ElementDog>()&&station.CurrentElement.Data!=null,"research station receives the part and its JSON data");
+  var monitor=Field<Canvas>(station,"_monitor");var anchor=Field<Transform>(station,"_screenAnchor");Check(anchor&&Vector3.Distance(monitor.transform.position,anchor.position)<.001f&&Quaternion.Angle(monitor.transform.rotation,anchor.rotation)<.01f,"details UI aligned to new computer display");Check(HVRInputModule.Instance.UICanvases.Contains(monitor),"computer canvas registered with HurricaneVR UI");
+  ClinicFurnitureSetup.Preview();
+  Check(AppSession.Load("PracticeScene"),"practice scene loads");yield return 1f;
+  var session=UnityEngine.Object.FindAnyObjectByType<PracticeSession>();Check(session,"practice session retained");Materials();Check(LightmapSettings.lightmaps.Length>0,"practice baked lighting present");
+  foreach(PracticeSet set in Enum.GetValues(typeof(PracticeSet)))
+  {
+   session.Begin(PracticeDifficulty.Beginner,set);yield return .1f;int count=set==PracticeSet.Bones?10:set==PracticeSet.Muscles?17:set==PracticeSet.Brain?9:36;Check(session.TotalCount==count,"practice "+set+": correct part count");
+   Check(session.ActivePieces.All(p=>p.GetComponent<Renderer>().bounds.min.y>.779f),"practice "+set+": parts above new supply tabletop");
+   Check(session.ActivePieces.All(p=>{var b=p.GetComponent<Renderer>().bounds;return b.min.x>2.25f&&b.max.x<3.13f&&b.min.z>-.9f&&b.max.z<1.4f;}),"practice "+set+": parts clear the workdesk backboard and stay on tabletop");
+   foreach(var p in session.ActivePieces){p.PrepareForGrab();p.transform.SetPositionAndRotation(p.Slot.transform.position,p.Slot.transform.rotation);Physics.SyncTransforms();Check(p.TryPlaceOrReturn(),"practice "+set+": own target accepts "+p.name);}
+   yield return .6f;Check(session.IsComplete,"practice "+set+": assembly completes on new stand");
+  }
+  session.Begin(PracticeDifficulty.Beginner,PracticeSet.All);yield return .2f;ClinicFurnitureSetup.Preview();
+ }
+}

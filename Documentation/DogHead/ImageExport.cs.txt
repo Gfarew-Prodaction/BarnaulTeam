@@ -1,0 +1,44 @@
+using System;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Rendering;
+using InteracrSystem;
+public static class DogElementImageExport
+{
+ public static void Run()
+ {
+  EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
+  var root=GameObject.Find("Dog Head · Layer Model");
+  var groups=root.GetComponentsInChildren<ElementDog>(true).GroupBy(e=>e.Id).ToArray();
+  foreach(var go in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())go.SetActive(false);
+  RenderSettings.ambientMode=AmbientMode.Flat;RenderSettings.ambientLight=new Color(.65f,.65f,.65f);RenderSettings.fog=false;
+  var light=new GameObject("Export key").AddComponent<Light>();light.type=LightType.Directional;light.intensity=1.6f;light.transform.rotation=Quaternion.Euler(35,-35,0);RenderSettings.sun=light;
+  var fill=new GameObject("Export fill").AddComponent<Light>();fill.type=LightType.Directional;fill.intensity=.5f;fill.transform.rotation=Quaternion.Euler(0,140,0);
+  string dir="output/dog-head-complete-upload/images";Directory.CreateDirectory(dir);
+  foreach(var group in groups)
+  {
+   var stage=new GameObject("Export "+group.Key);Bounds bounds=default;bool first=true;
+   foreach(var item in group)
+   {
+    var source=item.GetComponent<MeshRenderer>();var mf=item.GetComponent<MeshFilter>();if(!source||!mf)continue;
+    var part=new GameObject(item.name);part.transform.SetParent(stage.transform,false);part.transform.SetPositionAndRotation(item.transform.position,item.transform.rotation);part.transform.localScale=item.transform.lossyScale;
+    part.AddComponent<MeshFilter>().sharedMesh=mf.sharedMesh;var renderer=part.AddComponent<MeshRenderer>();renderer.sharedMaterials=source.sharedMaterials;
+    if(first){bounds=renderer.bounds;first=false;}else bounds.Encapsulate(renderer.bounds);
+   }
+   var rt=new RenderTexture(1280,720,24);float radius=Mathf.Max(bounds.extents.magnitude,.005f);
+   var cameras=new Camera[2];var directions=new[]{new Vector3(-.6f,.4f,-1),new Vector3(.5f,.7f,1)};
+   for(int side=0;side<2;side++)
+   {
+    var cam=new GameObject("Export camera").AddComponent<Camera>();cameras[side]=cam;cam.backgroundColor=new Color(.91f,.94f,.95f);cam.clearFlags=CameraClearFlags.SolidColor;
+    cam.orthographic=true;cam.rect=new Rect(side*.5f,0,.5f,1);cam.orthographicSize=radius*1.23f;cam.nearClipPlane=.001f;cam.farClipPlane=100;
+    cam.transform.position=bounds.center+directions[side].normalized*radius*4;cam.transform.LookAt(bounds.center);cam.targetTexture=rt;cam.Render();
+   }
+   var previous=RenderTexture.active;RenderTexture.active=rt;var tex=new Texture2D(1280,720,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,1280,720),0,0);tex.Apply();File.WriteAllBytes(dir+"/"+group.Key+"-model.jpg",tex.EncodeToJPG(91));RenderTexture.active=previous;
+   foreach(var c in cameras)UnityEngine.Object.DestroyImmediate(c.gameObject);UnityEngine.Object.DestroyImmediate(tex);rt.Release();UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(stage);
+  }
+  File.WriteAllText("/tmp/dog-image-export.txt","Exported "+groups.Length+" element plates; scene not saved.");
+ }
+}

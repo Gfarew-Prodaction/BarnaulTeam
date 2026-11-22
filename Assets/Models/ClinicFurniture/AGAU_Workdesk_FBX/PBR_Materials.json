@@ -1,0 +1,91 @@
+{
+  "WD_Satin_Worktop_2K": {
+    "Base Color": "Textures/WD_Satin_Worktop_2K_BaseColor.png",
+    "Roughness": "Textures/WD_Satin_Worktop_2K_Roughness.png",
+    "Metallic": 0.25,
+    "Normal": "Textures/WD_Satin_Worktop_2K_Normal.png",
+    "Alpha": 1.0
+  },
+  "WD_Pearl_Powdercoat_2K": {
+    "Base Color": "Textures/WD_Pearl_Powdercoat_2K_BaseColor.png",
+    "Roughness": "Textures/WD_Pearl_Powdercoat_2K_Roughness.png",
+    "Metallic": 0.11999999731779099,
+    "Normal": "Textures/WD_Pearl_Powdercoat_2K_Normal.png",
+    "Alpha": 1.0
+  },
+  "WD_Forest_Green_Trim": {
+    "Base Color": [
+      0.03500000014901161,
+      0.13500000536441803,
+      0.052000001072883606,
+      1.0
+    ],
+    "Roughness": "Textures/WD_Forest_Green_Trim_Roughness_1K.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "WD_Brushed_Steel_Hardware": {
+    "Base Color": [
+      0.49000000953674316,
+      0.5099999904632568,
+      0.5199999809265137,
+      1.0
+    ],
+    "Roughness": "Textures/WD_Brushed_Steel_Hardware_Roughness_1K.png",
+    "Metallic": 0.949999988079071,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "WD_Grey_Modesty_Panel": {
+    "Base Color": [
+      0.28999999165534973,
+      0.3100000023841858,
+      0.30000001192092896,
+      1.0
+    ],
+    "Roughness": "Textures/WD_Grey_Modesty_Panel_Roughness_1K.png",
+    "Metallic": 0.3499999940395355,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "WD_Rubber_And_Recesses": {
+    "Base Color": [
+      0.012000000104308128,
+      0.014000000432133675,
+      0.013000000268220901,
+      1.0
+    ],
+    "Roughness": 0.7200000286102295,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "WD_Backboard_Graphic_2K": {
+    "Base Color": "Textures/desk_backboard_graphic.png",
+    "Roughness": 0.5299999713897705,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  }
+}

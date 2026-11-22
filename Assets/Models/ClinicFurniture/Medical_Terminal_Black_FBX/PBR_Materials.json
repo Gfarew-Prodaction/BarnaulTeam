@@ -1,0 +1,68 @@
+{
+  "MT_Satin_Stainless_2K": {
+    "Base Color": "Textures/MT_Steel_BaseColor.png",
+    "Roughness": "Textures/MT_Steel_Roughness.png",
+    "Metallic": "Textures/MT_Steel_Metallic.png",
+    "Normal": "Textures/MT_Steel_Normal.png",
+    "Alpha": 1.0
+  },
+  "MT_Piano_Black_Bezel": {
+    "Base Color": [
+      0.003000000026077032,
+      0.004000000189989805,
+      0.004999999888241291,
+      1.0
+    ],
+    "Roughness": 0.25,
+    "Metallic": 0.07999999821186066,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "MT_Black_Inactive_Display_1K": {
+    "Base Color": "Textures/MT_Black_Screen_BaseColor.png",
+    "Roughness": "Textures/MT_Black_Screen_Roughness.png",
+    "Metallic": 0.05000000074505806,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "MT_Rubber_And_Port_Recesses": {
+    "Base Color": [
+      0.008999999612569809,
+      0.010999999940395355,
+      0.012000000104308128,
+      1.0
+    ],
+    "Roughness": "Textures/MT_Rubber_And_Port_Recesses_Roughness_512.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "MT_Dark_Teal_Insert": {
+    "Base Color": [
+      0.004000000189989805,
+      0.054999999701976776,
+      0.05900000035762787,
+      1.0
+    ],
+    "Roughness": "Textures/MT_Dark_Teal_Insert_Roughness_512.png",
+    "Metallic": 0.07999999821186066,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  }
+}

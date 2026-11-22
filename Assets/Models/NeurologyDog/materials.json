@@ -1,0 +1,42 @@
+{
+  "mtl_ger_shepherd_body_org1": {
+    "texture": "Textures/body.png",
+    "alpha": false,
+    "eye": false
+  },
+  "mtl_ger_shepherd_head_org1": {
+    "texture": "Textures/head.png",
+    "alpha": false,
+    "eye": false
+  },
+  "mtl_ger_shepherd_mouth_org1": {
+    "texture": "Textures/mouth.png",
+    "alpha": false,
+    "eye": false
+  },
+  "mtl_shiny_lense_eye.002": {
+    "texture": "Textures/head.png",
+    "alpha": false,
+    "eye": true
+  },
+  "mtl_wolf_a_body_a.003": {
+    "texture": "Textures/body.png",
+    "alpha": false,
+    "eye": false
+  },
+  "mtl_wolf_a_hair_a_body.001": {
+    "texture": "Textures/hair.png",
+    "alpha": true,
+    "eye": false
+  },
+  "mtl_wolf_a_head_a.003": {
+    "texture": "Textures/head.png",
+    "alpha": false,
+    "eye": false
+  },
+  "mtl_wolf_mouth.002": {
+    "texture": "Textures/mouth.png",
+    "alpha": false,
+    "eye": false
+  }
+}

@@ -112,3 +112,11 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Local workspace files and generated previews
+.DS_Store
+.idea/
+/output/
+/Backups/
+/Assets/_Recovery/
+/Assets/_Recovery.meta

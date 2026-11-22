@@ -1,0 +1,52 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using InteracrSystem;
+using HurricaneVR.Framework.Core.UI;
+[InitializeOnLoad]
+public static class AGAURoomVerification
+{
+ const string Key="AGAU.RoomVerification";static double deadline;
+ static AGAURoomVerification(){EditorApplication.update+=Begin;}
+ static void Begin(){
+  if(SessionState.GetBool(Key,false)){deadline=EditorApplication.timeSinceStartup+60;EditorApplication.update-=Begin;EditorApplication.update+=Tick;return;}
+  if(!File.Exists("/tmp/agau-room-play.request")||EditorApplication.isPlaying)return;
+  File.Delete("/tmp/agau-room-play.request");File.WriteAllText("/tmp/agau-room-validation.txt","");SessionState.SetBool(Key,true);deadline=EditorApplication.timeSinceStartup+60;EditorApplication.update-=Begin;EditorApplication.update+=Tick;EditorApplication.EnterPlaymode();
+ }
+ static void Check(bool condition,string text){if(!condition)throw new Exception(text);File.AppendAllText("/tmp/agau-room-validation.txt","PASS "+text+"\n");}
+ static void Tick(){
+  if(EditorApplication.isCompiling||!EditorApplication.isPlaying||Time.time<1)return;
+  if(EditorApplication.timeSinceStartup>deadline){Finish("FAIL timeout");return;}
+  EditorApplication.update-=Tick;
+  try{Run();Finish("SUCCESS");}catch(Exception ex){Finish("FAIL "+ex);}
+ }
+ static void Finish(string text){File.AppendAllText("/tmp/agau-room-validation.txt",text+"\n");SessionState.SetBool(Key,false);EditorApplication.ExitPlaymode();}
+ static void Run(){
+  var room=GameObject.Find(AGAURoomSceneSetup.RoomName);Check(room,"room persists in scene");
+  var meshes=room.GetComponentsInChildren<MeshRenderer>();Check(meshes.Count(r=>r.enabled)==14,"14 visible room meshes");Check(meshes.Where(r=>r.name.StartsWith("UCX_")).All(r=>!r.enabled),"collision meshes hidden");
+  var cols=room.GetComponentsInChildren<MeshCollider>();Check(cols.Length==9&&cols.All(c=>c.enabled&&!c.isTrigger&&!c.convex),"9 active static room colliders");
+  Check(meshes.Where(r=>r.enabled).SelectMany(r=>r.sharedMaterials).All(m=>m&&m.shader.name=="Universal Render Pipeline/Lit"),"all room materials use URP Lit");
+  Check(LightmapSettings.lightmaps.Length>0,"baked room lightmaps loaded");Check(LightmapSettings.lightProbes&&LightmapSettings.lightProbes.count>=27,"baked light probes loaded");
+  Check(meshes.Count(r=>r.enabled&&r.lightmapIndex>=0&&r.lightmapIndex<LightmapSettings.lightmaps.Length)>=10,"room meshes receive baked lightmaps");
+  var probe=UnityEngine.Object.FindAnyObjectByType<ReflectionProbe>();Check(probe&&probe.bakedTexture,"baked room reflection available");
+  var plane=UnityEngine.Object.FindObjectsByType<Transform>(FindObjectsInactive.Include).First(t=>t.name=="Plane");Check(!plane.gameObject.activeSelf,"old outdoor plane disabled");
+  foreach(string name in new[]{"VetTable","office_desk_with_drawers"}){
+   var go=GameObject.Find(name);var rs=go.GetComponentsInChildren<Renderer>().Where(r=>r.enabled).ToArray();var b=rs[0].bounds;foreach(var r in rs)b.Encapsulate(r.bounds);
+   Check(b.min.x>-.99f&&b.max.x<3.65f&&b.min.z>-2.4f&&b.max.z<2.4f,name+" fully inside room with wall clearance");
+  }
+  var camera=Camera.main;Check(camera&&camera.transform.position.x>-1.1f&&camera.transform.position.x<3.6f&&camera.transform.position.z>-2.3f&&camera.transform.position.z<2.3f,"player spawns inside room");
+  var rig=GameObject.Find("TechDemoXRRigOpenXR");Physics.SyncTransforms();Check(Physics.Raycast(rig.transform.position+Vector3.up*.5f,Vector3.down,out var hit,2,1,QueryTriggerInteraction.Ignore)&&hit.collider.transform.IsChildOf(room.transform),"spawn grounded on imported room floor");
+  var head=GameObject.Find("Dog Head · Layer Model");var elements=head.GetComponentsInChildren<ElementDog>(true);Check(elements.Length==43,"43 anatomy parts retained");Check(elements.All(e=>e.Data!=null),"nested anatomy elements still bind to JSON");Check(elements.Where(e=>e.gameObject.activeInHierarchy).All(e=>e.GetComponent<Rigidbody>().isKinematic),"active anatomy parts remain parked");
+  var chooser=head.GetComponent<ChoiceLayer>();chooser.ShowBones();Check(head.transform.Find("Bones and teeth").gameObject.activeSelf&&!head.transform.Find("Skin").gameObject.activeSelf,"layer switching works after reparenting");chooser.ShowSkin();
+  var panel=(Canvas)typeof(LayerModelController).GetField("_panel",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(head.GetComponent<LayerModelController>());Check(HVRInputModule.Instance&&HVRInputModule.Instance.UICanvases.Contains(panel),"VR layer panel remains registered");
+  var zone=GameObject.Find("Cube (1)");Check(zone&&zone.GetComponent<ElementInspectionStation>(),"research station reference retained");
+  var center=GameObject.Find("Inspection Gallery Center").transform.position;var monitor=GameObject.Find("Cube (2)").transform.position;float radius=Vector3.ProjectOnPlane(monitor-center,Vector3.up).magnitude+.17f;
+  Check(center.x-radius>-1.1f&&center.x+radius<3.65f&&center.z-radius>-2.35f&&center.z+radius<2.35f,"photo orbit fits within room walls");
+  Check(UnityEngine.Object.FindAnyObjectByType<ElementTray>(),"four-place tray retained");
+  AGAURoomSceneSetup.RenderPreview();
+ }
+}

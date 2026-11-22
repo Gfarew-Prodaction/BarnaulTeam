@@ -1,0 +1,14 @@
+Clinic furniture integration
+
+Assets: Assets/Models/ClinicFurniture
+Six original FBX packages, external textures, 32 URP materials, packed metallic/smoothness maps, six ready scene prefabs in Prefabs/. UCX meshes have static colliders and hidden renderers. Source FBX meshes have lightmap UV generation and no camera/light/animation import.
+
+SampleScene: Vet_Table replaces old VetTable visuals; AGAU_Anatomy_Stand under the model; Instrument_Tray replaces tray geometry and retains four reservation slots; Medical_Terminal_Black hosts the existing layer canvas reflowed as four buttons; AGAU_Workdesk replaces office desk visuals; AGAU_Computer hosts the JSON details canvas via an explicit screen anchor. Legacy objects remain as hidden anchors where relevant. Existing control bindings and JSON IDs remain.
+
+PracticeScene: Vet_Table and anatomy stand replace assembly table/base visuals. Workdesk replaces the supply table visuals, faces the room and keeps its backboard. Supply surface is inset from the backboard; usable packing area is 2.28 x 0.86 m. Practice assembly surface height is serialized instead of hardcoded, matching the new stand.
+
+Both rooms and furniture are saved in scenes, not spawned at startup. The pre-existing runtime UI generation remains. Lighting/reflections have been rebaked separately for both rooms.
+
+Tools/Clinic Furniture contains preparation, installation, bake and preview commands. Installation skips scenes already marked installed. Pre-change scenes are in Backups/ClinicFurniture.
+
+Validation: validation.txt. Previews: output/clinic-furniture/.

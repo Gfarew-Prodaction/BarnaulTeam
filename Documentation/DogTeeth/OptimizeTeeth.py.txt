@@ -1,0 +1,12 @@
+import bpy,json
+bpy.ops.wm.read_factory_settings(use_empty=True)
+bpy.ops.import_scene.fbx(filepath='/Users/artem/GitHub/BrainDogVR/Assets/Models/DogHead/Teeth/teeth_dog.fbx')
+stats=[]
+for o in bpy.context.scene.objects:
+ if o.type!='MESH':continue
+ bpy.context.view_layer.objects.active=o
+ o.data.calc_loop_triangles();before=len(o.data.loop_triangles)
+ dec=o.modifiers.new('Runtime tooth detail','DECIMATE');dec.ratio=min(1,1400/before);dec.use_collapse_triangulate=True
+ bpy.ops.object.modifier_apply(modifier=dec.name);o.data.calc_loop_triangles();stats.append((o.name,before,len(o.data.loop_triangles)))
+bpy.ops.export_scene.fbx(filepath='/Users/artem/GitHub/BrainDogVR/Assets/Models/DogHead/Teeth/teeth_runtime.fbx',object_types={'MESH'},bake_anim=False,axis_forward='-Z',axis_up='Y',path_mode='AUTO')
+print('TRIANGLES',sum(s[1] for s in stats),'->',sum(s[2] for s in stats));open('/tmp/teeth-optimized.json','w').write(json.dumps(stats))

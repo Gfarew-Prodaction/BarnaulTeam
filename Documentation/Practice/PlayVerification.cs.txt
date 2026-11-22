@@ -1,0 +1,116 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Grabbers;
+using InteracrSystem;
+
+[InitializeOnLoad]
+public static class PracticeVerification
+{
+ const string Key="Practice.Verification";static IEnumerator _run;static double next,deadline;
+ static PracticeVerification(){EditorApplication.update+=Begin;}
+ static void Begin()
+ {
+  if(SessionState.GetBool(Key,false)&&EditorApplication.isPlaying){StartRunner();return;}
+  if(!File.Exists("/tmp/practice-test.request")||EditorApplication.isCompiling||EditorApplication.isPlaying)return;
+  File.Delete("/tmp/practice-test.request");EditorSceneManager.OpenScene(PracticeSceneSetup.ScenePath);File.WriteAllText("/tmp/practice-test.results","");SessionState.SetBool(Key,true);StartRunner();EditorApplication.EnterPlaymode();
+ }
+ static void StartRunner(){EditorApplication.update-=Begin;_run=Run();deadline=EditorApplication.timeSinceStartup+150;next=0;EditorApplication.update+=Tick;}
+ static void Tick()
+ {
+  if(!EditorApplication.isPlaying||EditorApplication.isCompiling||Time.time<1||EditorApplication.timeSinceStartup<next)return;
+  try{
+   if(EditorApplication.timeSinceStartup>deadline)throw new Exception("Verification timeout");
+   if(!_run.MoveNext()){Finish("SUCCESS");return;}
+   next=EditorApplication.timeSinceStartup+(_run.Current is float f?f:0);
+  }catch(Exception ex){Finish("FAIL "+ex);}
+ }
+ static void Check(bool value,string text){if(!value)throw new Exception(text);File.AppendAllText("/tmp/practice-test.results","PASS "+text+"\n");}
+ static void Finish(string text){File.AppendAllText("/tmp/practice-test.results",text+"\n");SessionState.SetBool(Key,false);EditorApplication.update-=Tick;EditorApplication.ExitPlaymode();}
+ static IEnumerator Run()
+ {
+  var session=UnityEngine.Object.FindAnyObjectByType<PracticeSession>();Check(session,"practice scene opens");
+  Check(EditorBuildSettings.scenes.Any(s=>s.enabled&&s.path==PracticeSceneSetup.ScenePath),"practice scene included in build");
+  Check(GameObject.Find("Assembly Table")&&GameObject.Find("Supply Table")&&!GameObject.Find("Cube (2)")&&!GameObject.Find("Anatomy Workstation"),"practice has two tables without study equipment");
+  Check(LightmapSettings.lightmaps.Length>0,"practice has baked room lighting");
+  foreach(PracticeDifficulty difficulty in Enum.GetValues(typeof(PracticeDifficulty)))foreach(PracticeSet set in Enum.GetValues(typeof(PracticeSet)))
+  {
+   session.Begin(difficulty,set);yield return .1f;
+   int expected=set==PracticeSet.Bones?10:set==PracticeSet.Muscles?17:set==PracticeSet.Brain?9:36;
+   Check(session.TotalCount==expected&&session.PlacedCount==0,$"{difficulty}/{set}: correct set and reset progress");
+   Check(session.ActivePieces.All(p=>p.GetComponent<Rigidbody>().isKinematic&&!p.GetComponent<OnMoveBackItem>()),$"{difficulty}/{set}: parked supply parts without study auto-return");
+   Check(session.ActivePieces.All(p=>p.Slot.GetComponent<Renderer>().enabled==(difficulty==PracticeDifficulty.Beginner)),$"{difficulty}/{set}: contour policy");
+   Check(session.ActivePieces.All(p=>p.GetComponent<PracticePieceLabel>().LabelsAllowed==(difficulty!=PracticeDifficulty.Advanced)),$"{difficulty}/{set}: name policy");
+   Check(session.ActivePieces.All(p=>p.GetComponent<ElementDog>().Data!=null),$"{difficulty}/{set}: JSON names available");
+   var bounds=session.ActivePieces.Select(p=>p.GetComponent<Renderer>().bounds).ToArray();
+   Check(bounds.All(b=>b.min.y>.775f),$"{difficulty}/{set}: parts lie above supply tabletop");
+   Check(bounds.All(b=>b.min.x>2.239f&&b.max.x<3.261f&&b.min.z>-.891f&&b.max.z<1.391f),$"{difficulty}/{set}: parts stay inside usable supply surface");
+   for(int i=0;i<bounds.Length;i++)for(int j=i+1;j<bounds.Length;j++)CheckNoOverlap(bounds[i],bounds[j],difficulty,set);
+   if(difficulty==PracticeDifficulty.Beginner&&set==PracticeSet.All)Preview("beginner-all");
+   if(difficulty==PracticeDifficulty.Intermediate&&set==PracticeSet.Bones)Preview("intermediate-bones");
+   if(difficulty==PracticeDifficulty.Advanced&&set==PracticeSet.Brain)Preview("advanced-brain");
+  }
+  session.Begin(PracticeDifficulty.Beginner,PracticeSet.Brain);yield return .1f;
+  var piece=session.ActivePieces[0];var source=piece.SourcePosition;
+  piece.PrepareForGrab();piece.transform.position=new Vector3(1.3f,1.2f,.4f);Physics.SyncTransforms();
+  Check(!piece.TryPlaceOrReturn(),"incorrect release rejected");yield return .5f;
+  Check(!piece.IsPlaced&&Vector3.Distance(piece.transform.position,source)<.002f&&piece.GetComponent<Rigidbody>().isKinematic,"incorrect piece returns to supply and parks");
+  piece.PrepareForGrab();piece.transform.SetPositionAndRotation(piece.Slot.transform.position,piece.Slot.transform.rotation*Quaternion.Euler(120,0,0));Physics.SyncTransforms();
+  Check(!piece.TryPlaceOrReturn(),"incorrect rotation rejected");yield return .5f;
+  var other=session.ActivePieces[1];piece.PrepareForGrab();piece.transform.SetPositionAndRotation(other.Slot.transform.position,other.Slot.transform.rotation);Physics.SyncTransforms();
+  Check(!piece.TryPlaceOrReturn(),"piece cannot complete a different target");yield return .5f;
+  piece.PrepareForGrab();piece.transform.SetPositionAndRotation(piece.Slot.transform.position,piece.Slot.transform.rotation);Physics.SyncTransforms();Check(piece.TryPlaceOrReturn(),"correct placement accepted");yield return .5f;
+  Check(piece.IsPlaced&&session.PlacedCount==1&&piece.transform.parent==piece.Slot.transform,"snap attaches to own slot and updates progress");
+  var control=UnityEngine.Object.FindAnyObjectByType<LayerModelController>();var local=piece.transform.localPosition;control.ApplyModelInput(new Vector2(1,0),.2f,.4f);yield return .05f;
+  Check(Vector3.Distance(piece.transform.localPosition,local)<.001f,"installed part follows model rotation and scale");
+  piece.PrepareForGrab();Check(session.PlacedCount==0&&!piece.GetComponent<Rigidbody>().isKinematic,"placed piece can be removed and grabbed again");
+  piece.transform.position=source;piece.TryPlaceOrReturn();piece.PrepareForGrab();Check(!piece.IsMoving&&!piece.GetComponent<Rigidbody>().isKinematic,"regrab cancels return without locking the object");
+  session.Begin(PracticeDifficulty.Beginner,PracticeSet.Bones);yield return .1f;
+  foreach(var p in session.ActivePieces){p.PrepareForGrab();p.transform.SetPositionAndRotation(p.Slot.transform.position,p.Slot.transform.rotation);Physics.SyncTransforms();Check(p.TryPlaceOrReturn(),"bone accepts its own pose: "+p.name);}
+  yield return .55f;Check(session.IsComplete&&session.PlacedCount==10,"complete assembly reaches success");Preview("completed-bones");
+  session.Begin(PracticeDifficulty.Advanced,PracticeSet.All);yield return .1f;Check(!session.IsComplete&&session.PlacedCount==0&&session.Mistakes==0,"restart clears success and mistakes");
+  var hand=UnityEngine.Object.FindAnyObjectByType<HVRHandGrabber>();piece=session.ActivePieces[0];
+  Check(hand.TryGrabNoEvents(piece.GetComponent<HVRGrabbable>(),true),"HurricaneVR silent grab succeeds");Check(!piece.GetComponent<Rigidbody>().isKinematic,"unconditional HVR hook restores dynamics for practice");hand.ForceRelease();yield return .7f;
+  Check(!piece.IsHeld&&piece.GetComponent<Rigidbody>().isKinematic&&!piece.IsMoving,"HVR release returns and restores repeatable grab state");
+  Check(AppSession.Load("Startup"),"return to menu starts");yield return .7f;
+  var menu=UnityEngine.Object.FindAnyObjectByType<StartupFlow>();Check(menu,"startup menu loads after practice");menu.ShowMenu();Check(menu.CurrentPage=="Modes","three-mode menu available with reused content");PreviewMenu("modes");
+  menu.EnterMode(AppMode.Practice);Check(menu.CurrentPage=="Difficulty","practice asks difficulty first");PreviewMenu("difficulty");menu.ChooseDifficulty(PracticeDifficulty.Advanced);Check(menu.CurrentPage=="Set","difficulty leads to set selection");PreviewMenu("sets");
+  menu.ChooseSet(PracticeSet.Brain);yield return .8f;
+  session=UnityEngine.Object.FindAnyObjectByType<PracticeSession>();Check(session&&session.Difficulty==PracticeDifficulty.Advanced&&session.Set==PracticeSet.Brain&&session.TotalCount==9,"menu selections survive scene transition");
+  Check(HVRManager.Instance.PlayerController==UnityEngine.Object.FindAnyObjectByType<HurricaneVR.Framework.Core.Player.HVRPlayerController>()&&HVRManager.Instance.Camera==Camera.main.transform,"persistent HVR context rebinds to new rig");
+  AppSession.Load("Startup");yield return .7f;menu=UnityEngine.Object.FindAnyObjectByType<StartupFlow>();menu.ShowMenu();menu.EnterMode(AppMode.Learning);yield return .8f;
+  Check(SceneManager.GetActiveScene().name=="SampleScene"&&UnityEngine.Object.FindAnyObjectByType<StudyModePanel>()&&AppSession.Mode==AppMode.Learning,"learning opens guided study room");
+  var guide=UnityEngine.Object.FindAnyObjectByType<StudyModePanel>();
+  var step=typeof(StudyModePanel).GetField("_step",BindingFlags.Instance|BindingFlags.NonPublic);step.SetValue(guide,2);
+  var lessonPiece=GameObject.Find("Dog Head · Layer Model").GetComponentsInChildren<HVRGrabbable>().First();
+  hand=UnityEngine.Object.FindAnyObjectByType<HVRHandGrabber>();Check(hand.TryGrabNoEvents(lessonPiece,true)&&lessonPiece.IsHandGrabbed,"lesson can grab a model part");
+  // Tick synchronously: without a hardware grip the rig releases synthetic grabs on its next update.
+  typeof(StudyModePanel).GetMethod("Update",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(guide,null);
+  Check((int)step.GetValue(guide)==3,"lesson tracks grabbed part after detaching from model (step="+step.GetValue(guide)+", held="+lessonPiece.IsHandGrabbed+", cached="+((HVRGrabbable[])typeof(StudyModePanel).GetField("_items",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(guide)).Contains(lessonPiece)+")");hand.ForceRelease();yield return .8f;
+  Check((int)step.GetValue(guide)==4,"lesson advances after releasing the part");
+  AppSession.Load("Startup");yield return .7f;menu=UnityEngine.Object.FindAnyObjectByType<StartupFlow>();menu.ShowMenu();menu.EnterMode(AppMode.Study);yield return .8f;
+  Check(SceneManager.GetActiveScene().name=="SampleScene"&&AppSession.Mode==AppMode.Study,"study mode still opens original room");
+  Check(UnityEngine.Object.FindObjectsByType<DataScripts.RemoteElementContent>().Length==1,"content service stays single across mode transitions");
+ }
+ static void CheckNoOverlap(Bounds a,Bounds b,PracticeDifficulty difficulty,PracticeSet set)
+ {
+  if(a.Intersects(b))throw new Exception("Supply layout overlap "+difficulty+"/"+set+" "+a+" "+b);
+ }
+ static void Preview(string name)
+ {
+  var go=new GameObject("Practice preview camera");go.hideFlags=HideFlags.HideAndDontSave;var camera=go.AddComponent<Camera>();camera.enabled=false;camera.transform.position=new Vector3(-.65f,1.65f,2.05f);camera.transform.LookAt(new Vector3(1.2f,1.05f,-.45f));camera.fieldOfView=74;camera.nearClipPlane=.02f;camera.farClipPlane=20;camera.GetUniversalAdditionalCameraData().renderPostProcessing=true;SaveCamera(camera,name);UnityEngine.Object.DestroyImmediate(go);
+ }
+ static void PreviewMenu(string name){if(Camera.main)SaveCamera(Camera.main,"menu-"+name);}
+ static void SaveCamera(Camera camera,string name)
+ {
+  Directory.CreateDirectory("output/practice");var oldTarget=camera.targetTexture;var rt=new RenderTexture(1600,1100,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);camera.targetTexture=rt;camera.Render();var old=RenderTexture.active;RenderTexture.active=rt;var tex=new Texture2D(1600,1100,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,1600,1100),0,0);tex.Apply();File.WriteAllBytes("output/practice/"+name+".jpg",tex.EncodeToJPG(94));RenderTexture.active=old;camera.targetTexture=oldTarget;rt.Release();UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(tex);
+ }
+}

@@ -1,0 +1,26 @@
+PASS room persists in scene
+PASS 14 visible room meshes
+PASS collision meshes hidden
+PASS 9 active static room colliders
+PASS all room materials use URP Lit
+PASS baked room lightmaps loaded
+PASS baked light probes loaded
+PASS room meshes receive baked lightmaps
+PASS baked room reflection available
+PASS old outdoor plane disabled
+PASS VetTable fully inside room with wall clearance
+PASS office_desk_with_drawers fully inside room with wall clearance
+PASS player spawns inside room
+PASS spawn grounded on imported room floor
+PASS 43 anatomy parts retained
+PASS nested anatomy elements still bind to JSON
+PASS active anatomy parts remain parked
+PASS layer switching works after reparenting
+PASS VR layer panel remains registered
+PASS research station reference retained
+PASS photo orbit fits within room walls
+PASS four-place tray retained
+SUCCESS
+
+BAKED lightmaps=1 probes=27 reflection=True
+Room preview inspected after baking. Hardware Quest performance and APK build not measured in this scene-edit task.

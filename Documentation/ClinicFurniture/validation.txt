@@ -1,0 +1,145 @@
+Unity 6000.6.8f1, 2026-11-20
+
+PASS all six assets persisted in study scene
+PASS AGAU_Anatomy_Stand: visible meshes use URP materials
+PASS AGAU_Anatomy_Stand: collision meshes hidden
+PASS AGAU_Anatomy_Stand: physical collision exists
+PASS Vet_Table: visible meshes use URP materials
+PASS Vet_Table: collision meshes hidden
+PASS Vet_Table: physical collision exists
+PASS Medical_Terminal_Black: visible meshes use URP materials
+PASS Medical_Terminal_Black: collision meshes hidden
+PASS Medical_Terminal_Black: physical collision exists
+PASS AGAU_Computer: visible meshes use URP materials
+PASS AGAU_Computer: collision meshes hidden
+PASS AGAU_Computer: physical collision exists
+PASS Instrument_Tray: visible meshes use URP materials
+PASS Instrument_Tray: collision meshes hidden
+PASS Instrument_Tray: physical collision exists
+PASS AGAU_Workdesk: visible meshes use URP materials
+PASS AGAU_Workdesk: collision meshes hidden
+PASS AGAU_Workdesk: physical collision exists
+PASS study baked lighting present
+PASS terminal has four layer buttons
+PASS model control uses new veterinary table
+PASS terminal canvas registered with HurricaneVR UI
+PASS terminal layer button 0 changes the model
+PASS terminal layer button 1 changes the model
+PASS terminal layer button 2 changes the model
+PASS terminal layer button 3 changes the model
+PASS four tray places preserved
+PASS all four tray places accept parts
+PASS tray parks parts without falling
+PASS research station receives the part and its JSON data
+PASS details UI aligned to new computer display
+PASS computer canvas registered with HurricaneVR UI
+PASS practice scene loads
+PASS practice session retained
+PASS AGAU_Anatomy_Stand: visible meshes use URP materials
+PASS AGAU_Anatomy_Stand: collision meshes hidden
+PASS AGAU_Anatomy_Stand: physical collision exists
+PASS Vet_Table: visible meshes use URP materials
+PASS Vet_Table: collision meshes hidden
+PASS Vet_Table: physical collision exists
+PASS AGAU_Workdesk: visible meshes use URP materials
+PASS AGAU_Workdesk: collision meshes hidden
+PASS AGAU_Workdesk: physical collision exists
+PASS practice baked lighting present
+PASS practice Bones: correct part count
+PASS practice Bones: parts above new supply tabletop
+PASS practice Bones: parts clear the workdesk backboard and stay on tabletop
+PASS practice Bones: own target accepts frontal bone
+PASS practice Bones: own target accepts incisive bone
+PASS practice Bones: own target accepts lower jaw
+PASS practice Bones: own target accepts nasal bone
+PASS practice Bones: own target accepts occipital bone
+PASS practice Bones: own target accepts occipital bone 2
+PASS practice Bones: own target accepts parietal bone
+PASS practice Bones: own target accepts the temporal process of the zygomatic bone
+PASS practice Bones: own target accepts The zygomatic process of the temporal bone
+PASS practice Bones: own target accepts upper jaw
+PASS practice Bones: assembly completes on new stand
+PASS practice Muscles: correct part count
+PASS practice Muscles: parts above new supply tabletop
+PASS practice Muscles: parts clear the workdesk backboard and stay on tabletop
+PASS practice Muscles: own target accepts frontal muscle
+PASS practice Muscles: own target accepts frontal muscle.001
+PASS practice Muscles: own target accepts Levator nasolabialis
+PASS practice Muscles: own target accepts Levator nasolabialis (cut)
+PASS practice Muscles: own target accepts Levator nasolabialis.001
+PASS practice Muscles: own target accepts masticatory muscle
+PASS practice Muscles: own target accepts masticatory muscle.001
+PASS practice Muscles: own target accepts medial levator of the eye corner
+PASS practice Muscles: own target accepts medial levator of the eye corner.001
+PASS practice Muscles: own target accepts orbicularis oculi muscle
+PASS practice Muscles: own target accepts orbicularis oculi muscle.001
+PASS practice Muscles: own target accepts Retopo_the muscle that lowers the lower eyelid
+PASS practice Muscles: own target accepts Retopo_the muscle that lowers the lower eyelid.001
+PASS practice Muscles: own target accepts temporalis muscle
+PASS practice Muscles: own target accepts temporalis muscle.001
+PASS practice Muscles: own target accepts Zygomaticus
+PASS practice Muscles: own target accepts Zygomaticus.001
+PASS practice Muscles: assembly completes on new stand
+PASS practice Brain: correct part count
+PASS practice Brain: parts above new supply tabletop
+PASS practice Brain: parts clear the workdesk backboard and stay on tabletop
+PASS practice Brain: own target accepts Bridge
+PASS practice Brain: own target accepts cerebellum
+PASS practice Brain: own target accepts intermediate brain
+PASS practice Brain: own target accepts medulla oblongata
+PASS practice Brain: own target accepts midbrain
+PASS practice Brain: own target accepts olfactory bulbs
+PASS practice Brain: own target accepts olfactory bulbs.001
+PASS practice Brain: own target accepts Retopo_the left hemisphere.003
+PASS practice Brain: own target accepts Retopo_the right hemisphere.004
+PASS practice Brain: assembly completes on new stand
+PASS practice All: correct part count
+PASS practice All: parts above new supply tabletop
+PASS practice All: parts clear the workdesk backboard and stay on tabletop
+PASS practice All: own target accepts frontal bone
+PASS practice All: own target accepts incisive bone
+PASS practice All: own target accepts lower jaw
+PASS practice All: own target accepts nasal bone
+PASS practice All: own target accepts occipital bone
+PASS practice All: own target accepts occipital bone 2
+PASS practice All: own target accepts parietal bone
+PASS practice All: own target accepts the temporal process of the zygomatic bone
+PASS practice All: own target accepts The zygomatic process of the temporal bone
+PASS practice All: own target accepts upper jaw
+PASS practice All: own target accepts frontal muscle
+PASS practice All: own target accepts frontal muscle.001
+PASS practice All: own target accepts Levator nasolabialis
+PASS practice All: own target accepts Levator nasolabialis (cut)
+PASS practice All: own target accepts Levator nasolabialis.001
+PASS practice All: own target accepts masticatory muscle
+PASS practice All: own target accepts masticatory muscle.001
+PASS practice All: own target accepts medial levator of the eye corner
+PASS practice All: own target accepts medial levator of the eye corner.001
+PASS practice All: own target accepts orbicularis oculi muscle
+PASS practice All: own target accepts orbicularis oculi muscle.001
+PASS practice All: own target accepts Retopo_the muscle that lowers the lower eyelid
+PASS practice All: own target accepts Retopo_the muscle that lowers the lower eyelid.001
+PASS practice All: own target accepts temporalis muscle
+PASS practice All: own target accepts temporalis muscle.001
+PASS practice All: own target accepts Zygomaticus
+PASS practice All: own target accepts Zygomaticus.001
+PASS practice All: own target accepts Bridge
+PASS practice All: own target accepts cerebellum
+PASS practice All: own target accepts intermediate brain
+PASS practice All: own target accepts medulla oblongata
+PASS practice All: own target accepts midbrain
+PASS practice All: own target accepts olfactory bulbs
+PASS practice All: own target accepts olfactory bulbs.001
+PASS practice All: own target accepts Retopo_the left hemisphere.003
+PASS practice All: own target accepts Retopo_the right hemisphere.004
+PASS practice All: assembly completes on new stand
+SUCCESS
+
+Lighting:
+Baking study room...
+Study maps=1 probes=27 reflection=True
+Practice maps=1 probes=27 reflection=True
+SUCCESS
+
+Android Player C# compilation: PASS, 0 errors (existing Unity Android references/defines; not a full IL2CPP/APK build).
+No physical Quest/controller test was performed. UI persistent callbacks, HurricaneVR canvas registration, JSON details, tray reservations and practice placements were checked in Editor Play Mode. Existing cached/fallback JSON was used.

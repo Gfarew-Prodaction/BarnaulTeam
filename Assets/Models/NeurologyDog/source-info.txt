@@ -1,0 +1,3 @@
+User-supplied german-shepherd-rig (1).zip. Original rig and mesh preserved.
+Six new looping skeletal animations authored for the educational simulation.
+Not a diagnostic or prognostic model.

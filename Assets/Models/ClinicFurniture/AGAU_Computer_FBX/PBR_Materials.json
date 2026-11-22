@@ -1,0 +1,75 @@
+{
+  "PC_Satin_Silver_2K": {
+    "Base Color": "Textures/PC_Satin_Silver_2K_BaseColor.png",
+    "Roughness": "Textures/PC_Satin_Silver_2K_Roughness.png",
+    "Metallic": 0.47999998927116394,
+    "Normal": "Textures/PC_Satin_Silver_2K_Normal.png",
+    "Alpha": 1.0
+  },
+  "PC_Black_ABS": {
+    "Base Color": [
+      0.008999999612569809,
+      0.009999999776482582,
+      0.012000000104308128,
+      1.0
+    ],
+    "Roughness": "Textures/PC_Black_ABS_Roughness_512.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "PC_Display_Glass_1K": {
+    "Base Color": "Textures/PC_Display_Glass_1K_BaseColor.png",
+    "Roughness": "Textures/PC_Display_Glass_1K_Roughness.png",
+    "Metallic": 0.07999999821186066,
+    "Normal": "Textures/PC_Display_Glass_1K_Normal.png",
+    "Alpha": 1.0
+  },
+  "PC_Forest_Green_Polymer": {
+    "Base Color": [
+      0.03500000014901161,
+      0.18000000715255737,
+      0.04500000178813934,
+      1.0
+    ],
+    "Roughness": "Textures/PC_Forest_Green_Polymer_Roughness_512.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "PC_USB_Blue_Insert": {
+    "Base Color": [
+      0.006000000052154064,
+      0.1599999964237213,
+      0.3199999928474426,
+      1.0
+    ],
+    "Roughness": 0.47999998927116394,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "PC_AGAU_Gold_Transfer_1K": {
+    "Base Color": "Textures/table_agau_gold.png",
+    "Roughness": 0.3400000035762787,
+    "Metallic": 0.800000011920929,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": "Textures/table_agau_gold.png"
+  }
+}

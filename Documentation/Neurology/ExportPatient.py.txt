@@ -1,0 +1,58 @@
+import bpy,math,json,os
+from pathlib import Path
+from mathutils import Quaternion,Vector
+base=Path('/Users/artem/GitHub/BrainDogVR');folder=base/'Assets/Models/NeurologyDog';folder.mkdir(parents=True,exist_ok=True);(folder/'Textures').mkdir(exist_ok=True)
+bpy.ops.wm.open_mainfile(filepath=str(base/'Backups/NeurologySource/source/German Shepherd.blend'))
+rig=next(o for o in bpy.data.objects if o.type=='ARMATURE');meshes=[o for o in bpy.data.objects if o.type=='MESH']
+print('RIG',rig.name,'rotation',list(rig.rotation_euler),'pose',[(b.name,list(b.rotation_euler),len(b.constraints)) for b in rig.pose.bones][:8])
+manifest={}
+for mat in bpy.data.materials:
+ if not mat.use_nodes:continue
+ nodes=[n for n in mat.node_tree.nodes if n.type=='TEX_IMAGE' and n.image and n.image.size[0]]
+ candidates=[n for n in nodes if 'cger' in n.image.name and 'col' in n.image.name] or nodes
+ if not candidates:continue
+ image=candidates[0].image
+ typ=next((k for k in ['hair','head','body','mouth'] if k in image.name),'head')
+ source=base/'Backups/NeurologySource/textures'/('-cger_shepherd_'+typ+'_org1_col.png')
+ target=folder/'Textures'/(typ+'.png')
+ if source.exists():target.write_bytes(source.read_bytes())
+ else:image.filepath_raw=str(target);image.file_format='PNG';image.save()
+ manifest[mat.name]={'texture':str(target.relative_to(folder)),'alpha':typ=='hair'}
+for o in meshes:
+ # Remove subdivision only; preserve skin deformation and the original weighted geometry.
+ for mod in list(o.modifiers):
+  if mod.type=='SUBSURF':o.modifiers.remove(mod)
+for bone in rig.pose.bones:bone.rotation_mode='QUATERNION';bone.rotation_quaternion=Quaternion();bone.location=(0,0,0);bone.scale=(1,1,1)
+rig.animation_data_clear()
+# Export compact, looping skeletal clips; trajectory is driven separately inside the lab.
+def set_rotation(bone_name,axis,angle):
+ b=rig.pose.bones.get(bone_name)
+ if b:
+  q=b.bone.matrix_local.to_quaternion();b.rotation_quaternion=q.inverted()@Quaternion(axis,angle)@q
+for name in ['NormalWalk','CircleLeft','CircleRight','CerebellarAtaxia','VestibularAtaxia','ReviewIdle']:
+ action=bpy.data.actions.new(name);action.use_fake_user=True;rig.animation_data_create();rig.animation_data.action=action
+ for frame in range(1,50):
+  phase=(frame-1)/48*2*math.pi
+  for b in rig.pose.bones:b.rotation_quaternion=Quaternion();b.location=(0,0,0)
+  walking=name!='ReviewIdle';ataxia=name=='CerebellarAtaxia';vest=name=='VestibularAtaxia'
+  for index,(upper,lower,foot) in enumerate([('front_thigh.L','front_shin.L','front_foot.L'),('front_thigh.R','front_shin.R','front_foot.R'),('thigh.L','shin.L','foot.L'),('thigh.R','shin.R','foot.R')]):
+   # Four-beat walk, with exaggerated and less symmetric stepping for the cerebellar scenario.
+   p=phase+[0,math.pi,math.pi/2,3*math.pi/2][index]
+   swing=math.sin(p);lift=max(0,math.cos(p));amplitude=(.48 if ataxia else .19) if walking else 0
+   set_rotation(upper,(1,0,0),swing*amplitude)
+   set_rotation(lower,(1,0,0),-lift*(.58 if ataxia else .22) if walking else 0)
+   set_rotation(foot,(1,0,0),lift*(.38 if ataxia else .13) if walking else 0)
+  if name in ['CircleLeft','CircleRight']:set_rotation('Head',(0,0,1),(.13 if name=='CircleLeft' else -.13))
+  elif vest:set_rotation('Head',(0,-1,0),.32+.045*math.sin(phase))
+  else:set_rotation('Head',(1,0,0),.055*math.sin(phase*(2 if ataxia else 1)))
+  set_rotation('spine.004',(0,1,0),(.065*math.sin(phase*2) if ataxia else .055*math.sin(phase) if vest else .01*math.sin(phase*2)))
+  set_rotation('spine',(0,0,1),.06*math.sin(phase))
+  for b in rig.pose.bones:
+   b.keyframe_insert(data_path='rotation_quaternion',frame=frame,group=b.name)
+ bpy.context.scene.frame_start=1;bpy.context.scene.frame_end=49
+bpy.ops.object.select_all(action='DESELECT');rig.select_set(True)
+for o in meshes:o.select_set(True)
+bpy.context.view_layer.objects.active=rig;bpy.context.scene.frame_set(1)
+bpy.ops.export_scene.fbx(filepath=str(folder/'GermanShepherd_Neurology.fbx'),use_selection=True,object_types={'ARMATURE','MESH'},add_leaf_bones=False,bake_anim=True,bake_anim_use_all_actions=True,bake_anim_use_nla_strips=False,bake_anim_simplify_factor=.3,axis_forward='-Z',axis_up='Y',path_mode='COPY',embed_textures=False,use_mesh_modifiers=True)
+(folder/'materials.json').write_text(json.dumps(manifest,indent=2));(folder/'source-info.txt').write_text('User-supplied german-shepherd-rig (1).zip. Original rig and mesh preserved.\nSix new looping skeletal animations authored for the educational simulation.\nNot a diagnostic or prognostic model.\n')
+print('EXPORT',list(manifest),[(a.name,list(a.frame_range)) for a in bpy.data.actions])

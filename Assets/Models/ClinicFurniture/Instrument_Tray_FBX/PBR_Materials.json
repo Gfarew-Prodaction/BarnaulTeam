@@ -1,0 +1,9 @@
+{
+  "TR_Brushed_Medical_Stainless_2K.001": {
+    "Base Color": "Textures/TR_Steel_BaseColor.001.png",
+    "Roughness": "Textures/TR_Steel_Roughness.001.png",
+    "Metallic": "Textures/TR_Steel_Metallic.001.png",
+    "Normal": "Textures/TR_Steel_Normal.001.png",
+    "Alpha": 1.0
+  }
+}

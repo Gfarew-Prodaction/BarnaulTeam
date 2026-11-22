@@ -1,0 +1,89 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using DG.Tweening;
+using HurricaneVR.Framework.Core;
+using InteracrSystem;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.UI;
+
+public static class LearningVerification
+{
+ static int phase,checks;static double due;static string result;
+ static void Check(bool value,string message){checks++;if(!value)throw new Exception(message);}
+ static void Call(object obj,string method,params object[] args)=>obj.GetType().GetMethod(method,BindingFlags.NonPublic|BindingFlags.Instance).Invoke(obj,args);
+ public static void Run()
+ {
+  checks=0;result="";phase=0;
+  foreach(string name in new[]{"SampleScene","PracticeScene"})
+  {
+   EditorSceneManager.OpenScene("Assets/Scenes/"+name+".unity");
+   Check(UnityEngine.Object.FindObjectsByType<Light>(FindObjectsSortMode.None).All(l=>l.color==Color.white&&l.colorTemperature==6500),name+" white lighting");
+   Check(RenderSettings.ambientSkyColor.r>=.69f,name+" ambient");
+   if(name=="SampleScene")Check(UnityEngine.Object.FindAnyObjectByType<LayerElementCatalog>(),"catalogue saved in scene");
+  }
+  AppSession.SelectMode(AppMode.Learning);EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");EditorApplication.update+=Tick;EditorApplication.isPlaying=true;due=EditorApplication.timeSinceStartup+5;
+ }
+ static void Tick()
+ {
+  if(EditorApplication.isCompiling||EditorApplication.timeSinceStartup<due)return;
+  try
+  {
+   if(phase==0&&EditorApplication.isPlaying)
+   {
+    var guide=UnityEngine.Object.FindAnyObjectByType<VRLearningGuide>();if(!guide){Call(UnityEngine.Object.FindAnyObjectByType<StudyModePanel>(),"BeginLearning");due=EditorApplication.timeSinceStartup+1;return;}Check(guide.StepCount==25,"25 tutorial steps");
+    var catalog=UnityEngine.Object.FindAnyObjectByType<LayerElementCatalog>();var layers=UnityEngine.Object.FindAnyObjectByType<ChoiceLayer>();
+    foreach(Action choose in new Action[]{layers.ShowBones,layers.ShowMuscles,layers.ShowSkin,layers.ShowBrain})
+    {
+     choose();Check(catalog.EntryCount>0,"layer catalogue entries");
+     var item=layers.GetComponentsInChildren<ElementDog>().First();catalog.Select(item.Id);
+     Check(catalog.SelectedId==item.Id,"selection ID");Check(item.GetComponent<ElementInteractionVisuals>().CatalogSelected,"selection tint");
+     var parent=item.transform.parent;item.transform.SetParent(null,true);catalog.Select(item.Id);Check(catalog.SelectedId==item.Id,"detached item remains indexed");item.transform.SetParent(parent,true);
+     catalog.ClearSelection();Check(!item.GetComponent<ElementInteractionVisuals>().CatalogSelected,"selection cleared");
+    }
+    var control=UnityEngine.Object.FindAnyObjectByType<LayerModelController>();var rotation=control.Model.localRotation;var scale=control.Model.localScale;
+    control.ApplyModelInput(new Vector2(1,.3f),.8f,.5f);Check(Quaternion.Angle(rotation,control.Model.localRotation)>10,"model rotation");Check(control.Model.localScale!=scale,"model scaling");
+    control.ResetRotation();Check(Quaternion.Angle(rotation,control.Model.localRotation)<.01f&&control.RotationResetCount>0,"X resets rotation");control.ResetScale();Check(Vector3.Distance(scale,control.Model.localScale)<.001f&&control.ScaleResetCount>0,"A resets scale");
+    Directory.CreateDirectory("output/learning");var camera=Camera.main;ClinicFurnitureSetup.SaveCamera(camera,"output/learning/tutorial.jpg");
+    
+    var catalogCanvas=catalog.GetComponentsInChildren<Canvas>().First();
+    layers.ShowBones();catalog.Select(layers.GetComponentsInChildren<ElementDog>().First().Id);
+    var preview=new GameObject("Catalogue preview").AddComponent<Camera>();preview.enabled=false;preview.nearClipPlane=.01f;
+    preview.transform.position=catalog.Screen.position-catalog.Screen.forward*.65f;preview.transform.rotation=catalog.Screen.rotation;preview.fieldOfView=48;
+    var guideCanvas=guide.GetComponentsInChildren<Canvas>().First(c=>c.name=="Learning · Detailed guide");guideCanvas.gameObject.SetActive(false);
+    ClinicFurnitureSetup.SaveCamera(preview,"output/learning/catalogue.jpg");guideCanvas.gameObject.SetActive(true);UnityEngine.Object.Destroy(preview.gameObject);
+    Check(VRLearningGuide.HasOpenGuide,"tutorial enables UI away from table");
+    for(int i=0;i<guide.StepCount;i++){Call(guide,"Enter",i);Check(UnityEngine.Object.FindObjectsByType<Text>(FindObjectsSortMode.None).Any(t=>t.text.Contains((i+1)+" / 25")),"tutorial step "+i);}
+    result+="Study: catalogue all layers, detached selection, controls, 25 tutorial steps passed.\n";phase=1;EditorApplication.isPlaying=false;due=EditorApplication.timeSinceStartup+2;
+   }
+   else if(phase==1&&!EditorApplication.isPlaying)
+   {
+    EditorSceneManager.OpenScene("Assets/Scenes/PracticeScene.unity");AppSession.SelectMode(AppMode.Practice);EditorApplication.isPlaying=true;phase=2;due=EditorApplication.timeSinceStartup+4;
+   }
+   else if(phase==2&&EditorApplication.isPlaying)
+   {
+    var session=UnityEngine.Object.FindAnyObjectByType<PracticeSession>();
+    foreach(PracticeDifficulty difficulty in Enum.GetValues(typeof(PracticeDifficulty)))foreach(PracticeSet set in Enum.GetValues(typeof(PracticeSet)))
+    {
+     session.Begin(difficulty,set);bool beginner=difficulty==PracticeDifficulty.Beginner;
+     Check(session.PlacedCount==(beginner?0:1),"reference count "+difficulty+set);
+     Check(session.ActivePieces.Count(p=>p.IsReference)==(beginner?0:1),"single reference");
+     foreach(var piece in session.ActivePieces){Check(piece.GetComponent<HVRGrabbable>().CanBeGrabbed!=piece.IsReference,"only reference locked");Check(piece.Slot.GetComponentInChildren<Renderer>(true).enabled==(beginner&&!piece.IsPlaced),"difficulty contours");}
+     if(!beginner){var reference=session.ReferencePiece;Check(Vector3.Distance(reference.transform.position,reference.Slot.transform.position)<.0001f,"reference on target");Check(reference.transform.parent==reference.Slot.transform,"reference follows assembly");}
+     foreach(var piece in session.ActivePieces.Where(p=>!p.IsReference)){piece.transform.SetPositionAndRotation(piece.Slot.transform.position,piece.Slot.transform.rotation);Check(piece.TryPlaceOrReturn(),"valid snap");DOTween.CompleteAll(true);}
+     Check(session.IsComplete,"all pieces finish "+difficulty+set);
+    }
+    session.Begin(PracticeDifficulty.Intermediate,PracticeSet.Bones);ClinicFurnitureSetup.SaveCamera(Camera.main,"output/learning/practice.jpg");
+    result+="Practice: all 12 difficulty/set combinations, reference locking, contours, completion and restart passed.\n";phase=3;EditorApplication.isPlaying=false;due=EditorApplication.timeSinceStartup+2;
+   }
+   else if(phase==3&&!EditorApplication.isPlaying)
+   {
+    EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");Directory.CreateDirectory("Documentation/LearningExperience");File.WriteAllText("Documentation/LearningExperience/validation.txt","PASS "+checks+" assertions\n"+result+"Physical Quest controller input and APK execution not tested.\n");File.WriteAllText("/tmp/learning-tests.txt","PASS "+checks+"\n"+result);EditorApplication.update-=Tick;
+   }
+  }
+  catch(Exception e){File.WriteAllText("/tmp/learning-tests.txt","FAIL after "+checks+"\n"+e);EditorApplication.update-=Tick;EditorApplication.isPlaying=false;Debug.LogException(e);}
+ }
+}

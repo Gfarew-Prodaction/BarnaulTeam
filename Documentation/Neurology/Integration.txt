@@ -1,0 +1,29 @@
+Neurological brain practice and medical UI
+
+Patient source:
+The user-supplied german-shepherd-skull folder contains a skull and brain rather than a full animated dog. The adjacent user-supplied archive /Volumes/CPBA_X64FRE/собака/german-shepherd-rig (1).zip contains the full German Shepherd rig. Original source and texture files are preserved under Backups/NeurologySource. No third-party assets were downloaded.
+Exported patient: Assets/Models/NeurologyDog/GermanShepherd_Neurology.fbx, six authored looping skeletal clips (NormalWalk, CircleLeft, CircleRight, CerebellarAtaxia, VestibularAtaxia, ReviewIdle), 4 skinned renderers and additional eyes/mouth meshes. Unity generic Animator, URP materials and alpha-clipped hair. Patient is normalized to approximately .72 m in height, with a soft contact shadow. A saved patient prefab and observation area live in PracticeScene and become visible during checking. No dog geometry is spawned at runtime.
+
+Practice behavior:
+Brain pieces released within the assembly area remain at their attempted position/orientation. Wrong brain placements do not automatically fly back. Pieces released outside the assembly area return to supply. Bone and muscle snap/return behavior is preserved. The Check button is available for Brain and All sets, including incomplete assemblies. Held or moving brain pieces block assessment until released/stopped.
+Each physical part is assessed against its own target pose, difficulty tolerances and nearest target. There are 9 physical brain parts representing 8 logical regions because the olfactory bulbs are split. The report stores a unique target key in addition to the shared JSON ID; split parts are evaluated independently.
+A check snapshots Correct, Missing and Misplaced findings. Only the present assembly determines the neurological report, not past mistakes. Correct parts contribute to completion; a reference piece remains fixed for Intermediate/Advanced. Editing invalidates the displayed report and hides the dog. Restart clears findings and restores supply positions and reference rules.
+
+Scenarios:
+Left hemisphere -> possible left circling.
+Right hemisphere -> possible right circling.
+Cerebellum -> exaggerated, poorly coordinated stepping and body sway.
+Pons / medulla -> an explicitly labelled educational vestibular scenario with head tilt and imbalance. This is a gross-region proxy for vestibular pathways/nuclei, not a claim that every lesion of these whole structures produces this syndrome. A future explicit dog_vestibular_system ID is also supported.
+Other unmatched structures -> ReviewRequired, with the dog waiting and an explicit explanation that no specific motor animation is assigned. Such errors never produce a normal result.
+If several functions are affected, distinct scenarios play sequentially (14 seconds each) with previous/next/repeat controls. Correct complete brain -> normal gait only. Return to assembly hides the dog and restores the practice page on the TV. The clinical directions represent possible educational patterns, not deterministic diagnosis.
+
+Clinical reference:
+MSD/Merck Veterinary Manual, The Neurologic Examination of Animals:
+https://www.msdvetmanual.com/nervous-system/the-neurologic-examination/the-neurologic-examination-of-animals
+Unilateral forebrain lesions may cause circling toward the lesion; cerebellar dysfunction may cause ataxia/hypermetria; head tilt and vestibular ataxia are vestibular signs. The in-game mapping and explicit qualifications above intentionally distinguish these patterns from a diagnostic model.
+
+UI:
+Shared MedicalUITheme: warm paper #F6F3ED, navy #17304A, teal #247582, muted blue-gray, coral errors. A persistent rounded sprite in Resources/UI styles menus, buttons, terminals, cards, gallery captions and guidance. TV pages use a navy surface and light text. Active anatomy layer has a distinct teal button. Startup retains three modes and existing data-loading flow. Practice TV adds Check; neurological results replace the practice page and restore it on return. Learning is expanded to 26 steps including neurological checking. Existing JSON schema and server URLs are unchanged.
+The Google AI share link supplied as a palette reference could not be opened; this palette is the documented medical-atlas interpretation.
+
+Verification source is retained as PlayVerification.cs.txt. Android C# compilation and Unity play-mode checks are recorded in validation.txt; physical Quest input and a new APK were not tested in this change.

@@ -1,0 +1,65 @@
+PASS HurricaneVR owns UI input; competing module disabled
+PASS layer panel accepts rays from both sides
+PASS layer Canvas registered in HVR module
+PASS both controller pointers initialized
+PASS four active layer buttons
+PASS ray hits layer 0 / Left / side -1
+PASS trigger clicks layer 0 / Left / side -1
+PASS layer switch executes 0
+PASS ray hits layer 1 / Left / side -1
+PASS trigger clicks layer 1 / Left / side -1
+PASS layer switch executes 1
+PASS ray hits layer 2 / Left / side -1
+PASS trigger clicks layer 2 / Left / side -1
+PASS layer switch executes 2
+PASS ray hits layer 3 / Left / side -1
+PASS trigger clicks layer 3 / Left / side -1
+PASS layer switch executes 3
+PASS ray hits layer 0 / Left / side 1
+PASS trigger clicks layer 0 / Left / side 1
+PASS layer switch executes 0
+PASS ray hits layer 1 / Left / side 1
+PASS trigger clicks layer 1 / Left / side 1
+PASS layer switch executes 1
+PASS ray hits layer 2 / Left / side 1
+PASS trigger clicks layer 2 / Left / side 1
+PASS layer switch executes 2
+PASS ray hits layer 3 / Left / side 1
+PASS trigger clicks layer 3 / Left / side 1
+PASS layer switch executes 3
+PASS ray hits layer 0 / Right / side -1
+PASS trigger clicks layer 0 / Right / side -1
+PASS layer switch executes 0
+PASS ray hits layer 1 / Right / side -1
+PASS trigger clicks layer 1 / Right / side -1
+PASS layer switch executes 1
+PASS ray hits layer 2 / Right / side -1
+PASS trigger clicks layer 2 / Right / side -1
+PASS layer switch executes 2
+PASS ray hits layer 3 / Right / side -1
+PASS trigger clicks layer 3 / Right / side -1
+PASS layer switch executes 3
+PASS ray hits layer 0 / Right / side 1
+PASS trigger clicks layer 0 / Right / side 1
+PASS layer switch executes 0
+PASS ray hits layer 1 / Right / side 1
+PASS trigger clicks layer 1 / Right / side 1
+PASS layer switch executes 1
+PASS ray hits layer 2 / Right / side 1
+PASS trigger clicks layer 2 / Right / side 1
+PASS layer switch executes 2
+PASS ray hits layer 3 / Right / side 1
+PASS trigger clicks layer 3 / Right / side 1
+PASS layer switch executes 3
+PASS eligible hand grab target is green
+PASS blocked hand immediately loses green while hover event remains
+PASS green restores when same target becomes grabbable
+PASS in-flight item is not green
+PASS leaving grab candidate clears green
+PASS force grabber available
+PASS eligible distance grab target is green
+PASS disabled distance grab does not leave false green
+PASS held item loses green while its paired part remains highlighted
+SUCCESS
+
+Play Mode verification used simulated left/right HVR trigger states and runtime grab availability; no physical headset was connected.

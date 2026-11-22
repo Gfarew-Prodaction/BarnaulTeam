@@ -1,0 +1,19 @@
+Labelled dog teeth integration
+
+Source supplied by the user: /Volumes/CPBA_X64FRE/собака/teeth dog.fbx.
+Original preserved in Assets/Models/DogHead/Teeth/teeth_dog.fbx. Optimized source is teeth_runtime.fbx. 36 original tooth names preserved:
+chisels* -> dog_incisors, Резцы / Dentes incisivi: 12 meshes
+fangs* -> dog_canines, Клыки / Dentes canini: 4 meshes
+premolars* -> dog_premolars, Премоляры / Dentes premolares: 12 meshes
+molars* -> dog_molars, Моляры / Dentes molares: 8 meshes
+These counts describe this supplied asset, not a complete canine dental formula.
+
+340,259 source triangles reduced to 50,390 runtime triangles. Original meshes remain available. Alignment uses a rigid similarity registration against the two previous scene tooth groups; matrix and RMS (approximately 1.7 mm) are in alignment.json. Optimized centered meshes and conservative convex colliders are saved under Teeth/Parts. Enamel and transparent home-ghost materials use URP.
+
+Study SampleScene replaces the two merged tooth groups with 36 individual grabbables under Bones and teeth. Every tooth has ElementDog, ReturningGrabbable, Rigidbody, MeshCollider, ElementInfoPresenter, OnMoveBackItem and ElementInteractionVisuals with a saved home silhouette. The catalogue groups these into four selectable JSON entries, highlighting all parts of a selected type. Shared group IDs retain related-part feedback during study. Layer label is now Мышцы everywhere; its visibility remains bones plus muscles, as requested for a rename.
+
+PracticeScene persists all teeth and their targets; Bones now contains 46 physical parts, All 72, Muscles 17 and Brain 9. Existing supply layout packs the enlarged sets; neurological brain assessment is unchanged. Added teeth are normal bone snap/return practice pieces. No geometry is spawned at scene startup.
+
+Catalog version 12: Assets/Content/elements.example.json and Assets/Resources/ElementContent/elements.json contain 39 logical entries, replacing legacy dog_teeth/dog_teeth_2 with the four new groups. Fallback entries keep names available with an older server catalogue. Existing atlas image URLs are reused, so no new image upload is required. Upload output/teeth-content/elements.example.json over data/elements.example.json in the existing server bucket. No remote content was published by this change.
+
+Backups of both scenes are in Backups/DogTeeth. Validation source is retained as text. Physical VR controller input was not tested.

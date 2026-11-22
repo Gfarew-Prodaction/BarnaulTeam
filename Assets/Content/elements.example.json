@@ -1,0 +1,1550 @@
+{
+  "version": 13,
+  "elements": [
+    {
+      "id": "heart",
+      "name": "Сердце",
+      "nameLatin": "Cor",
+      "shortDescription": "Мышечный орган, обеспечивающий движение крови по сосудам.",
+      "fullDescription": "Сердце состоит из предсердий и желудочков. Галерея содержит анатомические препараты из учебного курса по анатомии плотоядных; вид животного на страницах отдельных снимков не уточнён.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/umn-heart-10.jpg",
+      "images": [
+        {
+          "title": "Сердце — краниальный вид",
+          "caption": "Изолированный препарат сердца: внешний вид со стороны крупных сосудов.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/umn-heart-10.jpg"
+        },
+        {
+          "title": "Вскрытое правое предсердие",
+          "caption": "Анатомический препарат: полость правого предсердия и прилежащие структуры.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/umn-heart-9.jpg"
+        },
+        {
+          "title": "Вскрытые правые отделы сердца",
+          "caption": "Изолированный препарат: вскрытые правый желудочек и лёгочный ствол.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/umn-heart-11.jpg"
+        },
+        {
+          "title": "Левые отделы сердца и клапаны",
+          "caption": "Изолированный препарат: разрез левого предсердия и желудочка, клапанный аппарат.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/umn-heart-12.jpg"
+        }
+      ]
+    },
+    {
+      "id": "brain",
+      "name": "Головной мозг собаки",
+      "nameLatin": "Encephalon",
+      "shortDescription": "Головной мозг — часть центральной нервной системы. Он обрабатывает сенсорную информацию, участвует в управлении движениями и регуляции функций организма.",
+      "fullDescription": "Головной мозг собаки расположен в полости черепа и вместе со спинным мозгом образует центральную нервную систему.\n\nВ его составе выделяют конечный, промежуточный и средний мозг, мост, мозжечок и продолговатый мозг. Большие полушария участвуют в обработке сенсорной информации, обучении и организации поведения. Мозжечок участвует в координации движений и поддержании равновесия. Стволовые отделы проводят сигналы между отделами нервной системы и участвуют в регуляции жизненно важных функций.\n\nВнутри мозга находятся желудочки, содержащие спинномозговую жидкость. Мозг покрыт мозговыми оболочками.\n\nВ галерее представлены цветные поперечные срезы и МРТ-изображения мозга и головы собаки. Сравнивайте изображения в разных плоскостях, чтобы изучать взаимное расположение структур. Подписи относятся к кадру в целом.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/brain-icon-photo.jpg",
+      "images": [
+        {
+          "title": "Головной мозг собаки — обзор",
+          "caption": "Таблица атласа Попеско, PDF-страница 183. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-183.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентральный вид",
+          "caption": "Таблица атласа Попеско, PDF-страница 184. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-184.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 02, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 2.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-002.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 10, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 10.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-010.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "eye",
+      "name": "Глазное яблоко собаки",
+      "nameLatin": "Bulbus oculi",
+      "shortDescription": "Глазное яблоко воспринимает свет и участвует в формировании зрительной информации. Оно расположено в глазнице и связано с головным мозгом зрительным нервом.",
+      "fullDescription": "Глазное яблоко собаки расположено в глазнице. Его стенка включает наружную фиброзную оболочку, сосудистую оболочку и сетчатку. К наружной оболочке относятся склера и прозрачная роговица.\n\nРадужка образует зрачок и участвует в регулировании количества света, поступающего внутрь глаза. Хрусталик и роговица преломляют свет. Полость позади хрусталика заполнена стекловидным телом. Фоторецепторы сетчатки преобразуют свет в сигналы, которые передаются по зрительному нерву.\n\nВеки, слёзный аппарат и третье веко участвуют в защите поверхности глаза. Вне глазного яблока расположены мышцы, обеспечивающие его движения.\n\nГалерея показывает положение глазничной области на анатомических иллюстрациях и МРТ-срезах головы собаки. Некоторые структуры глаза на этих обзорных изображениях отдельно не различимы; подписи относятся к кадру в целом.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg",
+      "images": [
+        {
+          "title": "Голова собаки — МРТ, уровень 01",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 1.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 02",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 3.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-003.jpg"
+        },
+        {
+          "title": "Области головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 171. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        },
+        {
+          "title": "Глазница и окружающие структуры",
+          "caption": "Фото препарата: область глазницы после удаления периорбиты, наружные мышцы глаза и слёзная железа. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-24-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_frontal_bone",
+      "name": "Лобная кость",
+      "nameLatin": "Os frontale",
+      "shortDescription": "Элемент модели головы собаки: лобная кость.",
+      "fullDescription": "Учебный элемент модели головы собаки. Лобная кость (Os frontale). Исходное имя объекта: frontal bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид сверху",
+          "caption": "Таблица атласа Попеско, PDF-страница 175. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-175.jpg"
+        },
+        {
+          "title": "Носовая полость и лобная пазуха",
+          "caption": "Фото препарата: носовая перегородка удалена, видны носовые раковины и область лобной пазухи. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-12.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_frontalis",
+      "name": "Лобная мышца",
+      "nameLatin": "M. frontalis",
+      "shortDescription": "Элемент модели головы собаки: лобная мышца.",
+      "fullDescription": "Учебный элемент модели головы собаки. Лобная мышца (M. frontalis). Исходное имя объекта: frontal muscle.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Голова — дорсальный вид",
+          "caption": "Фото препарата: мышцы области ушной раковины и височной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-3.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_incisive_bone",
+      "name": "Резцовая кость",
+      "nameLatin": "Os incisivum",
+      "shortDescription": "Элемент модели головы собаки: резцовая кость.",
+      "fullDescription": "Учебный элемент модели головы собаки. Резцовая кость (Os incisivum). Исходное имя объекта: incisive bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — вид сверху",
+          "caption": "Таблица атласа Попеско, PDF-страница 175. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-175.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Носовая полость и лобная пазуха",
+          "caption": "Фото препарата: носовая перегородка удалена, видны носовые раковины и область лобной пазухи. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-12.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_levator_nasolabialis",
+      "name": "Носогубной подниматель",
+      "nameLatin": "M. levator nasolabialis",
+      "shortDescription": "Элемент модели головы собаки: носогубной подниматель.",
+      "fullDescription": "Учебный элемент модели головы собаки. Носогубной подниматель (M. levator nasolabialis). Исходное имя объекта: Levator nasolabialis.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 185. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-185.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        },
+        {
+          "title": "Мышцы губ и щеки",
+          "caption": "Фото препарата с обзором носогубной и окологлазничной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_levator_nasolabialis_cut",
+      "name": "Носогубной подниматель — разрез",
+      "nameLatin": "M. levator nasolabialis",
+      "shortDescription": "Элемент модели головы собаки: носогубной подниматель — разрез.",
+      "fullDescription": "Учебный элемент модели головы собаки. Носогубной подниматель — разрез (M. levator nasolabialis). Исходное имя объекта: Levator nasolabialis (cut).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 185. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-185.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        },
+        {
+          "title": "Мышцы губ и щеки",
+          "caption": "Фото препарата с обзором носогубной и окологлазничной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_mandible",
+      "name": "Нижняя челюсть",
+      "nameLatin": "Mandibula",
+      "shortDescription": "Элемент модели головы собаки: нижняя челюсть.",
+      "fullDescription": "Учебный элемент модели головы собаки. Нижняя челюсть (Mandibula). Исходное имя объекта: lower jaw.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Челюсть, скуловая дуга и жевательные мышцы",
+          "caption": "Фото препарата: боковой вид нижней челюсти, скуловой дуги и жевательных мышц. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-3.jpg"
+        },
+        {
+          "title": "Ветвь нижней челюсти и сустав",
+          "caption": "Фото препарата после удаления скуловой дуги; видны ветвь нижней челюсти и область сустава. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-6.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_masseter",
+      "name": "Жевательная мышца",
+      "nameLatin": "M. masseter",
+      "shortDescription": "Элемент модели головы собаки: жевательная мышца.",
+      "fullDescription": "Учебный элемент модели головы собаки. Жевательная мышца (M. masseter). Исходное имя объекта: masticatory muscle.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg",
+      "images": [
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Глубокие мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 179. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-179.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости челюстного сустава",
+          "caption": "Таблица атласа Попеско, PDF-страница 182. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-182.jpg"
+        },
+        {
+          "title": "Челюсть, скуловая дуга и жевательные мышцы",
+          "caption": "Фото препарата: боковой вид нижней челюсти, скуловой дуги и жевательных мышц. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-3.jpg"
+        },
+        {
+          "title": "Голова собаки — поперечный срез",
+          "caption": "Фото поперечного среза головы собаки: свод черепа, челюсть, скуловая дуга и жевательные мышцы. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-10.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_levator_anguli_oculi_medialis",
+      "name": "Медиальный подниматель угла глаза",
+      "nameLatin": "M. levator anguli oculi medialis",
+      "shortDescription": "Элемент модели головы собаки: медиальный подниматель угла глаза.",
+      "fullDescription": "Учебный элемент модели головы собаки. Медиальный подниматель угла глаза (M. levator anguli oculi medialis). Исходное имя объекта: medial levator of the eye corner.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 01",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 1. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg"
+        },
+        {
+          "title": "Голова — дорсальный вид",
+          "caption": "Фото препарата: мышцы области ушной раковины и височной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-3.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_nasal_bone",
+      "name": "Носовая кость",
+      "nameLatin": "Os nasale",
+      "shortDescription": "Элемент модели головы собаки: носовая кость.",
+      "fullDescription": "Учебный элемент модели головы собаки. Носовая кость (Os nasale). Исходное имя объекта: nasal bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид сверху",
+          "caption": "Таблица атласа Попеско, PDF-страница 175. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-175.jpg"
+        },
+        {
+          "title": "Носовая полость и лобная пазуха",
+          "caption": "Фото препарата: носовая перегородка удалена, видны носовые раковины и область лобной пазухи. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-12.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_occipital_bone",
+      "name": "Затылочная кость — фрагмент 1",
+      "nameLatin": "Os occipitale",
+      "shortDescription": "Элемент модели головы собаки: затылочная кость — фрагмент 1.",
+      "fullDescription": "Учебный элемент модели головы собаки. Затылочная кость — фрагмент 1 (Os occipitale). Исходное имя объекта: occipital bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        },
+        {
+          "title": "Голова собаки — поперечный срез",
+          "caption": "Фото поперечного среза головы собаки: свод черепа, челюсть, скуловая дуга и жевательные мышцы. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-10.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_occipital_bone_2",
+      "name": "Затылочная кость — фрагмент 2",
+      "nameLatin": "Os occipitale",
+      "shortDescription": "Элемент модели головы собаки: затылочная кость — фрагмент 2.",
+      "fullDescription": "Учебный элемент модели головы собаки. Затылочная кость — фрагмент 2 (Os occipitale). Исходное имя объекта: occipital bone 2.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        },
+        {
+          "title": "Голова собаки — поперечный срез",
+          "caption": "Фото поперечного среза головы собаки: свод черепа, челюсть, скуловая дуга и жевательные мышцы. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-10.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_orbicularis_oculi",
+      "name": "Круговая мышца глаза",
+      "nameLatin": "M. orbicularis oculi",
+      "shortDescription": "Элемент модели головы собаки: круговая мышца глаза.",
+      "fullDescription": "Учебный элемент модели головы собаки. Круговая мышца глаза (M. orbicularis oculi). Исходное имя объекта: orbicularis oculi muscle.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 01",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 1.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        },
+        {
+          "title": "Мышцы губ и щеки",
+          "caption": "Фото препарата с обзором носогубной и окологлазничной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_parietal_bone",
+      "name": "Теменная кость",
+      "nameLatin": "Os parietale",
+      "shortDescription": "Элемент модели головы собаки: теменная кость.",
+      "fullDescription": "Учебный элемент модели головы собаки. Теменная кость (Os parietale). Исходное имя объекта: parietal bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид сверху",
+          "caption": "Таблица атласа Попеско, PDF-страница 175. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-175.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        },
+        {
+          "title": "Голова собаки — поперечный срез",
+          "caption": "Фото поперечного среза головы собаки: свод черепа, челюсть, скуловая дуга и жевательные мышцы. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-10.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_temporalis",
+      "name": "Височная мышца",
+      "nameLatin": "M. temporalis",
+      "shortDescription": "Элемент модели головы собаки: височная мышца.",
+      "fullDescription": "Учебный элемент модели головы собаки. Височная мышца (M. temporalis). Исходное имя объекта: temporalis muscle.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg",
+      "images": [
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Глубокие мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 179. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-179.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости челюстного сустава",
+          "caption": "Таблица атласа Попеско, PDF-страница 182. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-182.jpg"
+        },
+        {
+          "title": "Челюсть, скуловая дуга и жевательные мышцы",
+          "caption": "Фото препарата: боковой вид нижней челюсти, скуловой дуги и жевательных мышц. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-3.jpg"
+        },
+        {
+          "title": "Голова собаки — поперечный срез",
+          "caption": "Фото поперечного среза головы собаки: свод черепа, челюсть, скуловая дуга и жевательные мышцы. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-10.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_malaris",
+      "name": "Мышца, опускающая нижнее веко",
+      "nameLatin": "M. malaris",
+      "shortDescription": "Элемент модели головы собаки: мышца, опускающая нижнее веко.",
+      "fullDescription": "Учебный элемент модели головы собаки. Мышца, опускающая нижнее веко (M. malaris). Исходное имя объекта: the muscle that lowers the lower eyelid.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 02",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 3. Используется для ориентации в области век; выбранная мышца модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-003.jpg"
+        },
+        {
+          "title": "Голова — дорсальный вид",
+          "caption": "Фото препарата: мышцы области ушной раковины и височной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-3.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_zygomatic_temporal_process",
+      "name": "Височный отросток скуловой кости",
+      "nameLatin": "Processus temporalis ossis zygomatici",
+      "shortDescription": "Элемент модели головы собаки: височный отросток скуловой кости.",
+      "fullDescription": "Учебный элемент модели головы собаки. Височный отросток скуловой кости (Processus temporalis ossis zygomatici). Исходное имя объекта: the temporal process of the zygomatic bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Глубокие мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 179. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-179.jpg"
+        },
+        {
+          "title": "Челюсть, скуловая дуга и жевательные мышцы",
+          "caption": "Фото препарата: боковой вид нижней челюсти, скуловой дуги и жевательных мышц. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-3.jpg"
+        },
+        {
+          "title": "Ветвь нижней челюсти и сустав",
+          "caption": "Фото препарата после удаления скуловой дуги; видны ветвь нижней челюсти и область сустава. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-6.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_temporal_zygomatic_process",
+      "name": "Скуловой отросток височной кости",
+      "nameLatin": "Processus zygomaticus ossis temporalis",
+      "shortDescription": "Элемент модели головы собаки: скуловой отросток височной кости.",
+      "fullDescription": "Учебный элемент модели головы собаки. Скуловой отросток височной кости (Processus zygomaticus ossis temporalis). Исходное имя объекта: The zygomatic process of the temporal bone.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Глубокие мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 179. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-179.jpg"
+        },
+        {
+          "title": "Челюсть, скуловая дуга и жевательные мышцы",
+          "caption": "Фото препарата: боковой вид нижней челюсти, скуловой дуги и жевательных мышц. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-3.jpg"
+        },
+        {
+          "title": "Ветвь нижней челюсти и сустав",
+          "caption": "Фото препарата после удаления скуловой дуги; видны ветвь нижней челюсти и область сустава. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-6.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_maxilla",
+      "name": "Верхняя челюсть",
+      "nameLatin": "Maxilla",
+      "shortDescription": "Элемент модели головы собаки: верхняя челюсть.",
+      "fullDescription": "Учебный элемент модели головы собаки. Верхняя челюсть (Maxilla). Исходное имя объекта: upper jaw.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg",
+      "images": [
+        {
+          "title": "Кости черепа собаки — цветовая схема",
+          "caption": "Таблица атласа Попеско, PDF-страница 173. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-173.jpg"
+        },
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — вид сверху",
+          "caption": "Таблица атласа Попеско, PDF-страница 175. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-175.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Носовая полость и лобная пазуха",
+          "caption": "Фото препарата: носовая перегородка удалена, видны носовые раковины и область лобной пазухи. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-12.jpg"
+        },
+        {
+          "title": "Голова собаки — срединный разрез",
+          "caption": "Фото препарата собаки: полость черепа, мозг, носовая перегородка и нёбо. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_zygomaticus",
+      "name": "Скуловая мышца",
+      "nameLatin": "M. zygomaticus",
+      "shortDescription": "Элемент модели головы собаки: скуловая мышца.",
+      "fullDescription": "Учебный элемент модели головы собаки. Скуловая мышца (M. zygomaticus). Исходное имя объекта: Zygomaticus.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg",
+      "images": [
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Мышцы и сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 178. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-178.jpg"
+        },
+        {
+          "title": "Глубокие мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 179. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-179.jpg"
+        },
+        {
+          "title": "Сосуды головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 185. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-185.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        },
+        {
+          "title": "Мышцы губ и щеки",
+          "caption": "Фото препарата с обзором носогубной и окологлазничной области. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_pons",
+      "name": "Мост",
+      "nameLatin": "Pons",
+      "shortDescription": "Элемент головы собаки: мост.",
+      "fullDescription": "Учебный элемент модели головы собаки. Мост (Pons).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-009.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 09, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 9.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-009.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 10, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 10.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-010.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 11, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 11.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-011.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентральный вид",
+          "caption": "Таблица атласа Попеско, PDF-страница 184. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-184.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_cerebellum",
+      "name": "Мозжечок",
+      "nameLatin": "Cerebellum",
+      "shortDescription": "Элемент головы собаки: мозжечок.",
+      "fullDescription": "Учебный элемент модели головы собаки. Мозжечок (Cerebellum).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-009.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 09, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 9.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-009.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 10, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 10.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-010.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 11, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 11.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-011.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 12, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 12.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-012.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_diencephalon",
+      "name": "Промежуточный мозг",
+      "nameLatin": "Diencephalon",
+      "shortDescription": "Элемент головы собаки: промежуточный мозг.",
+      "fullDescription": "Учебный элемент модели головы собаки. Промежуточный мозг (Diencephalon).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-004.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 04, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 4.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-004.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 05, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 5.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-005.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 06, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 6.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-006.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — обзор",
+          "caption": "Таблица атласа Попеско, PDF-страница 183. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-183.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_medulla",
+      "name": "Продолговатый мозг",
+      "nameLatin": "Medulla oblongata",
+      "shortDescription": "Элемент головы собаки: продолговатый мозг.",
+      "fullDescription": "Учебный элемент модели головы собаки. Продолговатый мозг (Medulla oblongata).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-012.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 12, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 12.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-012.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 13, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 13.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-013.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 14, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 14.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-014.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 15, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 15.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-015.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_midbrain",
+      "name": "Средний мозг",
+      "nameLatin": "Mesencephalon",
+      "shortDescription": "Элемент головы собаки: средний мозг.",
+      "fullDescription": "Учебный элемент модели головы собаки. Средний мозг (Mesencephalon).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-006.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 06, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 6.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-006.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 07, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 7.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-007.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 08, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 8.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-008.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 09, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 9.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-009.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_olfactory_bulbs",
+      "name": "Обонятельная луковица",
+      "nameLatin": "Bulbus olfactorius",
+      "shortDescription": "Элемент головы собаки: обонятельная луковица.",
+      "fullDescription": "Учебный элемент модели головы собаки. Обонятельная луковица (Bulbus olfactorius).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-184.jpg",
+      "images": [
+        {
+          "title": "Головной мозг собаки — вентральный вид",
+          "caption": "Таблица атласа Попеско, PDF-страница 184. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-184.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 01, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 1.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-001.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 01, T2",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 17.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-017.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 05",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 9.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-009.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_left_hemisphere",
+      "name": "Левое полушарие большого мозга",
+      "nameLatin": "Hemispherium cerebri sinistrum",
+      "shortDescription": "Элемент головы собаки: левое полушарие большого мозга.",
+      "fullDescription": "Учебный элемент модели головы собаки. Левое полушарие большого мозга (Hemispherium cerebri sinistrum).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-002.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 02, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 2. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-002.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 03, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 3. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-003.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 04, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 4. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-004.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 05, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 5. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-005.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_right_hemisphere",
+      "name": "Правое полушарие большого мозга",
+      "nameLatin": "Hemispherium cerebri dextrum",
+      "shortDescription": "Элемент головы собаки: правое полушарие большого мозга.",
+      "fullDescription": "Учебный элемент модели головы собаки. Правое полушарие большого мозга (Hemispherium cerebri dextrum).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-002.jpg",
+      "images": [
+        {
+          "title": "Мозг собаки — уровень 02, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 2. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-002.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 03, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 3. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-003.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 04, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 4. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-004.jpg"
+        },
+        {
+          "title": "Мозг собаки — уровень 05, T1",
+          "caption": "МРТ и цветной срез с обозначениями. Canine Brain MRI & Brain Tissue Atlas, PDF-страница 5. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-brain-005.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — боковой вид",
+          "caption": "Фото препарата мозга собаки: полушарие, мозжечок и ствол. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-lateral.jpg"
+        },
+        {
+          "title": "Головной мозг собаки — вентролатеральный вид",
+          "caption": "Фото препарата мозга собаки: ствол, мозжечок и область черепных нервов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-dog-brain-ventrolateral.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_right_eye",
+      "name": "Правый глаз",
+      "nameLatin": "Bulbus oculi dexter",
+      "shortDescription": "Элемент головы собаки: правый глаз.",
+      "fullDescription": "Учебный элемент модели головы собаки. Правый глаз (Bulbus oculi dexter).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg",
+      "images": [
+        {
+          "title": "Голова собаки — МРТ, уровень 01",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 1. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 02",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 3. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-003.jpg"
+        },
+        {
+          "title": "Области головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 171. Подписи и условные обозначения сохранены. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        },
+        {
+          "title": "Глазница и окружающие структуры",
+          "caption": "Фото препарата: область глазницы после удаления периорбиты, наружные мышцы глаза и слёзная железа. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-24-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_left_eye",
+      "name": "Левый глаз",
+      "nameLatin": "Bulbus oculi sinister",
+      "shortDescription": "Элемент головы собаки: левый глаз.",
+      "fullDescription": "Учебный элемент модели головы собаки. Левый глаз (Bulbus oculi sinister).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg",
+      "images": [
+        {
+          "title": "Голова собаки — МРТ, уровень 01",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 1. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 02",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 3. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-003.jpg"
+        },
+        {
+          "title": "Области головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 171. Подписи и условные обозначения сохранены. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Обзор включает обе стороны; выбранная сторона отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        },
+        {
+          "title": "Глазница и окружающие структуры",
+          "caption": "Фото препарата: область глазницы после удаления периорбиты, наружные мышцы глаза и слёзная железа. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Сторона модели не выделена отдельно.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-24-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_head_skin",
+      "name": "Кожный покров головы с ушными раковинами",
+      "nameLatin": "Cutis capitis et auriculae",
+      "shortDescription": "Элемент головы собаки: кожный покров головы с ушными раковинами.",
+      "fullDescription": "Учебный элемент модели головы собаки. Кожный покров головы с ушными раковинами (Cutis capitis et auriculae).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg",
+      "images": [
+        {
+          "title": "Области головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 171. Подписи и условные обозначения сохранены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены. Показаны подлежащие ткани и анатомические ориентиры головы.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены. Показаны подлежащие ткани и анатомические ориентиры головы.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости челюстного сустава",
+          "caption": "Таблица атласа Попеско, PDF-страница 182. Подписи и условные обозначения сохранены. Показаны подлежащие ткани и анатомические ориентиры головы.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-182.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_head_fur",
+      "name": "Шерстяной покров головы",
+      "nameLatin": "Pili capitis",
+      "shortDescription": "Элемент головы собаки: шерстяной покров головы.",
+      "fullDescription": "Учебный элемент модели головы собаки. Шерстяной покров головы (Pili capitis).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg",
+      "images": [
+        {
+          "title": "Области головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 171. Подписи и условные обозначения сохранены. Обзор головы и подлежащих тканей; микроструктура шерсти отдельно не показана.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 177. Подписи и условные обозначения сохранены. Обзор головы и подлежащих тканей; микроструктура шерсти отдельно не показана.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-177.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 01",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 1. Обзор головы и подлежащих тканей; микроструктура шерсти отдельно не показана.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-001.jpg"
+        },
+        {
+          "title": "Голова собаки — МРТ, уровень 02",
+          "caption": "Структуры головы собаки на поперечном МРТ-срезе с обозначениями. Canine Head MRI Atlas, PDF-страница 3. Обзор головы и подлежащих тканей; микроструктура шерсти отдельно не показана.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-head-003.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Показаны веки и подлежащие ткани; микроструктура шерсти не показана.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Показаны веки и подлежащие ткани; микроструктура шерсти не показана.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_skin_inner",
+      "name": "Внутренний фрагмент покрова",
+      "nameLatin": "Cutis capitis",
+      "shortDescription": "Элемент головы собаки: внутренний фрагмент покрова.",
+      "fullDescription": "Учебный элемент модели головы собаки. Внутренний фрагмент покрова (Cutis capitis).",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg",
+      "images": [
+        {
+          "title": "Области головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 171. Подписи и условные обозначения сохранены. Только ориентиры головы: технический фрагмент Skin.fbx не идентифицирован как самостоятельная анатомическая структура.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-171.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены. Только ориентиры головы: технический фрагмент Skin.fbx не идентифицирован как самостоятельная анатомическая структура.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости мышечного отростка",
+          "caption": "Таблица атласа Попеско, PDF-страница 181. Подписи и условные обозначения сохранены. Только ориентиры головы: технический фрагмент Skin.fbx не идентифицирован как самостоятельная анатомическая структура.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-181.jpg"
+        },
+        {
+          "title": "Срез головы в плоскости челюстного сустава",
+          "caption": "Таблица атласа Попеско, PDF-страница 182. Подписи и условные обозначения сохранены. Только ориентиры головы: технический фрагмент Skin.fbx не идентифицирован как самостоятельная анатомическая структура.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-182.jpg"
+        },
+        {
+          "title": "Веки и глазная щель",
+          "caption": "Фото препарата: веки, третье веко и видимая поверхность глазного яблока. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Это ориентиры головы, а не идентификация технического фрагмента Skin.fbx.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-4.jpg"
+        },
+        {
+          "title": "Поверхностные мышцы лица",
+          "caption": "Фото препарата: мышцы мимики, область век, носа и губ. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена. Это ориентиры головы, а не идентификация технического фрагмента Skin.fbx.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_incisors",
+      "name": "Резцы",
+      "nameLatin": "Dentes incisivi",
+      "shortDescription": "Передние зубы, расположенные в ростральной части зубных рядов.",
+      "fullDescription": "Резцы (Dentes incisivi). Передние зубы, расположенные в ростральной части зубных рядов. В учебной модели эта группа представлена 12 отдельными зубами. Каждый зуб можно выбрать и взять отдельно; подсветка каталога показывает все зубы выбранной группы. Изображения атласа показывают общий вид черепа и зубных рядов, без разметки каждого отдельного зуба.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Ротовая полость и зубной ряд",
+          "caption": "Фото рассечённой головы: ротовая полость, зубной ряд и нёбо. Вид животного на странице не уточнён. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-5.jpg"
+        },
+        {
+          "title": "Скуловая дуга и жевательный аппарат",
+          "caption": "Фото препарата: взаимное положение скуловой дуги, височной и жевательной мышц, крупных щёчных зубов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_canines",
+      "name": "Клыки",
+      "nameLatin": "Dentes canini",
+      "shortDescription": "Конусовидные зубы между резцами и премолярами.",
+      "fullDescription": "Клыки (Dentes canini). Конусовидные зубы между резцами и премолярами. В учебной модели эта группа представлена 4 отдельными зубами. Каждый зуб можно выбрать и взять отдельно; подсветка каталога показывает все зубы выбранной группы. Изображения атласа показывают общий вид черепа и зубных рядов, без разметки каждого отдельного зуба.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Ротовая полость и зубной ряд",
+          "caption": "Фото рассечённой головы: ротовая полость, зубной ряд и нёбо. Вид животного на странице не уточнён. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-5.jpg"
+        },
+        {
+          "title": "Скуловая дуга и жевательный аппарат",
+          "caption": "Фото препарата: взаимное положение скуловой дуги, височной и жевательной мышц, крупных щёчных зубов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_premolars",
+      "name": "Премоляры",
+      "nameLatin": "Dentes premolares",
+      "shortDescription": "Предкоренные зубы, расположенные позади клыков.",
+      "fullDescription": "Премоляры (Dentes premolares). Предкоренные зубы, расположенные позади клыков. В учебной модели эта группа представлена 12 отдельными зубами. Каждый зуб можно выбрать и взять отдельно; подсветка каталога показывает все зубы выбранной группы. Изображения атласа показывают общий вид черепа и зубных рядов, без разметки каждого отдельного зуба.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Ротовая полость и зубной ряд",
+          "caption": "Фото рассечённой головы: ротовая полость, зубной ряд и нёбо. Вид животного на странице не уточнён. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-5.jpg"
+        },
+        {
+          "title": "Скуловая дуга и жевательный аппарат",
+          "caption": "Фото препарата: взаимное положение скуловой дуги, височной и жевательной мышц, крупных щёчных зубов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dog_molars",
+      "name": "Моляры",
+      "nameLatin": "Dentes molares",
+      "shortDescription": "Коренные зубы каудальной части зубных рядов.",
+      "fullDescription": "Моляры (Dentes molares). Коренные зубы каудальной части зубных рядов. В учебной модели эта группа представлена 8 отдельными зубами. Каждый зуб можно выбрать и взять отдельно; подсветка каталога показывает все зубы выбранной группы. Изображения атласа показывают общий вид черепа и зубных рядов, без разметки каждого отдельного зуба.",
+      "iconUrl": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg",
+      "images": [
+        {
+          "title": "Череп собаки — вид слева",
+          "caption": "Таблица атласа Попеско, PDF-страница 172. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-172.jpg"
+        },
+        {
+          "title": "Череп собаки — сагиттальный разрез",
+          "caption": "Таблица атласа Попеско, PDF-страница 174. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-174.jpg"
+        },
+        {
+          "title": "Череп собаки — вид снизу",
+          "caption": "Таблица атласа Попеско, PDF-страница 176. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-176.jpg"
+        },
+        {
+          "title": "Сагиттальный разрез головы собаки",
+          "caption": "Таблица атласа Попеско, PDF-страница 180. Подписи и условные обозначения сохранены. Границы отдельного фрагмента или группы из модели на таблице не отмечены.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/atlas-v11-popesko-180.jpg"
+        },
+        {
+          "title": "Ротовая полость и зубной ряд",
+          "caption": "Фото рассечённой головы: ротовая полость, зубной ряд и нёбо. Вид животного на странице не уточнён. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-22-5.jpg"
+        },
+        {
+          "title": "Скуловая дуга и жевательный аппарат",
+          "caption": "Фото препарата: взаимное положение скуловой дуги, височной и жевательной мышц, крупных щёчных зубов. University of Minnesota. Обзор анатомической области; граница выбранной детали модели отдельно не выделена.",
+          "url": "https://zgmwmaustzdsqybamalu.supabase.co/storage/v1/object/public/element-content/images/web-umn-23-4.jpg"
+        }
+      ]
+    }
+  ]
+}

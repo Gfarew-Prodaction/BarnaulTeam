@@ -1,0 +1,13 @@
+{
+  "fbx_version": 7400,
+  "model_count": 23,
+  "model_types": [
+    "Mesh"
+  ],
+  "embedded_textures": 22,
+  "render_meshes": 14,
+  "collision_meshes": 9,
+  "render_triangles": 24052,
+  "cameras": 0,
+  "lights": 0
+}

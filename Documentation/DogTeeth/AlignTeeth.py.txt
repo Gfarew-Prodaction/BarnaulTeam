@@ -1,0 +1,25 @@
+import numpy as np,json,itertools
+from scipy.spatial import cKDTree
+from pathlib import Path
+x=json.load(open('/tmp/teeth-alignment-points.json'));S=np.array(x['source']);T=np.array(x['target']);print('source',S.shape,np.ptp(S,axis=0),'target',T.shape,np.ptp(T,axis=0))
+# Use both arches and all tooth surfaces, rather than guessing a translation by eye.
+S=S[::max(1,len(S)//9000)];T=T[::max(1,len(T)//12000)];sc=S.mean(0);tc=T.mean(0)
+_,_,sv=np.linalg.svd(S-sc,full_matrices=False);_,_,tv=np.linalg.svd(T-tc,full_matrices=False);scale=np.linalg.norm(T-tc)/np.sqrt(len(T))*np.sqrt(len(S))/np.linalg.norm(S-sc)
+tree=cKDTree(T)
+def fit(A,B):
+ ac=A.mean(0);bc=B.mean(0);u,d,v=np.linalg.svd((A-ac).T@(B-bc));fix=np.eye(3);fix[-1,-1]=np.linalg.det(v.T@u.T);R=v.T@fix@u.T;k=np.sum(d*np.diag(fix))/np.sum((A-ac)**2);return k*R,bc-k*R@ac
+best=None
+for signs in itertools.product([-1,1],repeat=3):
+ R=tv.T@np.diag(signs)@sv
+ if np.linalg.det(R)<0:continue
+ M=scale*R;b=tc-M@sc
+ for n in range(100):
+  P=S@M.T+b;d,idx=tree.query(P);keep=d<np.quantile(d,.95);nextM,nextb=fit(S[keep],T[idx[keep]])
+  if np.linalg.norm(nextM-M)+np.linalg.norm(nextb-b)<1e-9:break
+  M,b=nextM,nextb
+ distances=tree.query(S@M.T+b)[0];score=np.sqrt(np.mean(distances**2))
+ print('candidate',signs,score,flush=True)
+ if best is None or score<best[0]:best=(score,M,b)
+score,M,b=best;matrix=np.eye(4);matrix[:3,:3]=M;matrix[:3,3]=b
+print('BEST RMS',score,'METRES',matrix)
+Path('Assets/Models/DogHead/Teeth/alignment.json').write_text(json.dumps({'rmsMetres':score,'matrix':matrix.tolist(),'source':'teeth_dog.fbx -> original scene tooth groups (rigid similarity ICP)'},indent=2))

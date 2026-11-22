@@ -1,0 +1,84 @@
+{
+  "TV_Satin_Stainless_2K": {
+    "Base Color": "Textures/TV_Steel_BaseColor.png",
+    "Roughness": "Textures/TV_Steel_Roughness.png",
+    "Metallic": "Textures/TV_Steel_Metallic.png",
+    "Normal": "Textures/TV_Steel_Normal.png",
+    "Alpha": 1.0
+  },
+  "TV_Piano_Black_Bezel": {
+    "Base Color": [
+      0.003000000026077032,
+      0.004000000189989805,
+      0.004999999888241291,
+      1.0
+    ],
+    "Roughness": 0.25,
+    "Metallic": 0.07999999821186066,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "TV_Black_Inactive_Display_1K": {
+    "Base Color": "Textures/TV_Black_Screen_BaseColor.png",
+    "Roughness": "Textures/TV_Black_Screen_Roughness.png",
+    "Metallic": 0.05000000074505806,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "TV_Rubber_And_Port_Recesses": {
+    "Base Color": [
+      0.0010000000474974513,
+      0.001500000013038516,
+      0.0020000000949949026,
+      1.0
+    ],
+    "Roughness": "Textures/TV_Rubber_And_Port_Recesses_Roughness_512.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "TV_Standby_Diffuser": {
+    "Base Color": [
+      0.20999999344348907,
+      0.44999998807907104,
+      0.47999998927116394,
+      1.0
+    ],
+    "Roughness": 0.30000001192092896,
+    "Metallic": 0.15000000596046448,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "TV_Graphite_Back_And_Bracket": {
+    "Base Color": [
+      0.03200000151991844,
+      0.03700000047683716,
+      0.04100000113248825,
+      1.0
+    ],
+    "Roughness": "Textures/TV_Graphite_Back_And_Bracket_Roughness_512.png",
+    "Metallic": 0.44999998807907104,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  }
+}

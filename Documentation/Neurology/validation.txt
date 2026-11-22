@@ -1,0 +1,9 @@
+PASS 321 assertions
+Brain: missing/misplaced/correct, left/right direction, cerebellar and vestibular clips, sequential deficits, unmapped findings, movement guard, correction and reset passed. All 12 difficulty/set combinations complete.
+UI: study TV, paper catalogue, rounded buttons and updated 26-step tutorial passed.
+Startup: themed three-mode menu preserved.
+Physical Quest controller input not tested.
+Android player C# compilation: PASS (0 errors; existing package deprecation warnings).
+Split olfactory bulb regression: missing and rotated pieces with the same JSON ID are evaluated separately.
+Animation checks compare actual skeletal poses and both directions of circling.
+Visual captures: normal dog, cerebellar dog, neurological findings, practice score, study TV, catalogue, tutorial, main menu.

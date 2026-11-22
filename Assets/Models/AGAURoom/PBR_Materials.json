@@ -1,0 +1,298 @@
+{
+  "AGAU_Dark_Bronze_Edges": {
+    "textures": {},
+    "Base Color": [
+      0.20000000298023224,
+      0.10000000149011612,
+      0.026000000536441803,
+      1.0
+    ],
+    "Roughness": 0.3199999928474426,
+    "Metallic": 0.800000011920929,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "AGAU_Satin_Champagne_Gold": {
+    "textures": {},
+    "Base Color": [
+      0.550000011920929,
+      0.28999999165534973,
+      0.06499999761581421,
+      1.0
+    ],
+    "Roughness": 0.30000001192092896,
+    "Metallic": 0.8199999928474426,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "AGAU_Ivory_Ceramic_Relief": {
+    "textures": {},
+    "Base Color": [
+      0.7200000286102295,
+      0.6499999761581421,
+      0.49000000953674316,
+      1.0
+    ],
+    "Roughness": 0.30000001192092896,
+    "Metallic": 0.11999999731779099,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "AGAU_Inscription_2K_PBR": {
+    "textures": {
+      "Base Color": "Textures/AGAU_Inscription_BaseColor_2048.png",
+      "Roughness": "Textures/AGAU_Inscription_Roughness_2048.png",
+      "Metallic": "Textures/AGAU_Inscription_Metallic_2048.png",
+      "Normal": "Textures/AGAU_Inscription_Normal_2048.png"
+    },
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Warm_Mineral_Plaster_1K": {
+    "textures": {
+      "Base Color": "Textures/M_Warm_Mineral_Plaster_1K_BaseColor.png",
+      "Roughness": "Textures/M_Warm_Mineral_Plaster_1K_Roughness.png",
+      "Normal": "Textures/M_Warm_Mineral_Plaster_1K_Normal.png"
+    },
+    "Metallic": 0.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Stone_Grout": {
+    "textures": {},
+    "Base Color": [
+      0.17000000178813934,
+      0.1599999964237213,
+      0.14000000059604645,
+      1.0
+    ],
+    "Roughness": 0.8799999952316284,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Acoustic_Ceiling_1K": {
+    "textures": {
+      "Base Color": "Textures/M_Acoustic_Ceiling_1K_BaseColor.png",
+      "Roughness": "Textures/M_Acoustic_Ceiling_1K_Roughness.png",
+      "Normal": "Textures/M_Acoustic_Ceiling_1K_Normal.png"
+    },
+    "Metallic": 0.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Limestone_Porcelain_Floor_2K": {
+    "textures": {
+      "Base Color": "Textures/M_Limestone_Porcelain_Floor_2K_BaseColor.png",
+      "Roughness": "Textures/M_Limestone_Porcelain_Floor_2K_Roughness.png",
+      "Normal": "Textures/M_Limestone_Porcelain_Floor_2K_Normal.png"
+    },
+    "Metallic": 0.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Dark_Stone_Skirting": {
+    "textures": {},
+    "Base Color": [
+      0.1899999976158142,
+      0.18000000715255737,
+      0.1599999964237213,
+      1.0
+    ],
+    "Roughness": 0.3799999952316284,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Satin_Brass_Trim": {
+    "textures": {},
+    "Base Color": [
+      0.550000011920929,
+      0.3100000023841858,
+      0.08500000089406967,
+      1.0
+    ],
+    "Roughness": 0.3199999928474426,
+    "Metallic": 0.7799999713897705,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Silk_Ivory_Wall_Panels_1K": {
+    "textures": {
+      "Base Color": "Textures/M_Silk_Ivory_Wall_Panels_1K_BaseColor.png",
+      "Roughness": "Textures/M_Silk_Ivory_Wall_Panels_1K_Roughness.png",
+      "Normal": "Textures/M_Silk_Ivory_Wall_Panels_1K_Normal.png"
+    },
+    "Metallic": 0.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Deep_Forest_Satin_1K": {
+    "textures": {
+      "Base Color": "Textures/M_Deep_Forest_Satin_1K_BaseColor.png",
+      "Roughness": "Textures/M_Deep_Forest_Satin_1K_Roughness.png",
+      "Normal": "Textures/M_Deep_Forest_Satin_1K_Normal.png"
+    },
+    "Metallic": 0.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Ceiling_Grid_White": {
+    "textures": {},
+    "Base Color": [
+      0.6800000071525574,
+      0.6700000166893005,
+      0.6100000143051147,
+      1.0
+    ],
+    "Roughness": 0.550000011920929,
+    "Metallic": 0.11999999731779099,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Dark_Aluminium": {
+    "textures": {},
+    "Base Color": [
+      0.04500000178813934,
+      0.05000000074505806,
+      0.04500000178813934,
+      1.0
+    ],
+    "Roughness": 0.4000000059604645,
+    "Metallic": 0.550000011920929,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_Warm_Grey_Door_Powdercoat_1K": {
+    "textures": {
+      "Base Color": "Textures/M_Warm_Grey_Door_Powdercoat_1K_BaseColor.png",
+      "Roughness": "Textures/M_Warm_Grey_Door_Powdercoat_1K_Roughness.png",
+      "Normal": "Textures/M_Warm_Grey_Door_Powdercoat_1K_Normal.png"
+    },
+    "Metallic": 0.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M_LED_Diffuser_4000K": {
+    "textures": {},
+    "Base Color": [
+      0.8500000238418579,
+      0.800000011920929,
+      0.6700000166893005,
+      1.0
+    ],
+    "Roughness": 0.3499999940395355,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Emission Color": [
+      1.0,
+      0.8600000143051147,
+      0.6499999761581421,
+      1.0
+    ]
+  }
+}

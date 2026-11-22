@@ -1,0 +1,7 @@
+PASS 748 assertions
+Study: catalogue all layers, detached selection, controls, 25 tutorial steps passed.
+Practice: all 12 difficulty/set combinations, reference locking, contours, completion and restart passed.
+Physical Quest controller input and APK execution not tested.
+Android player C# compilation: PASS (0 errors; existing deprecation warnings).
+Both room lightmaps/reflection probes rebaked successfully.
+Visual check: catalogue screen text fits, tutorial panel readable, practice reference and arrow visible.

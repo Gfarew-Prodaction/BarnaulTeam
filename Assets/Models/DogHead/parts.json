@@ -1,0 +1,109 @@
+{
+  "parts": [
+    {
+      "source": "frontal bone",
+      "id": "dog_frontal_bone",
+      "muscle": false
+    },
+    {
+      "source": "frontal muscle",
+      "id": "dog_frontalis",
+      "muscle": true
+    },
+    {
+      "source": "incisive bone",
+      "id": "dog_incisive_bone",
+      "muscle": false
+    },
+    {
+      "source": "Levator nasolabialis",
+      "id": "dog_levator_nasolabialis",
+      "muscle": true
+    },
+    {
+      "source": "Levator nasolabialis (cut)",
+      "id": "dog_levator_nasolabialis_cut",
+      "muscle": true
+    },
+    {
+      "source": "lower jaw",
+      "id": "dog_mandible",
+      "muscle": false
+    },
+    {
+      "source": "masticatory muscle",
+      "id": "dog_masseter",
+      "muscle": true
+    },
+    {
+      "source": "medial levator of the eye corner",
+      "id": "dog_levator_anguli_oculi_medialis",
+      "muscle": true
+    },
+    {
+      "source": "nasal bone",
+      "id": "dog_nasal_bone",
+      "muscle": false
+    },
+    {
+      "source": "occipital bone",
+      "id": "dog_occipital_bone",
+      "muscle": false
+    },
+    {
+      "source": "occipital bone 2",
+      "id": "dog_occipital_bone_2",
+      "muscle": false
+    },
+    {
+      "source": "orbicularis oculi muscle",
+      "id": "dog_orbicularis_oculi",
+      "muscle": true
+    },
+    {
+      "source": "parietal bone",
+      "id": "dog_parietal_bone",
+      "muscle": false
+    },
+    {
+      "source": "teeth",
+      "id": "dog_teeth",
+      "muscle": false
+    },
+    {
+      "source": "teeth2",
+      "id": "dog_teeth_2",
+      "muscle": false
+    },
+    {
+      "source": "temporalis muscle",
+      "id": "dog_temporalis",
+      "muscle": true
+    },
+    {
+      "source": "the muscle that lowers the lower eyelid",
+      "id": "dog_malaris",
+      "muscle": true
+    },
+    {
+      "source": "the temporal process of the zygomatic bone",
+      "id": "dog_zygomatic_temporal_process",
+      "muscle": false
+    },
+    {
+      "source": "The zygomatic process of the temporal bone",
+      "id": "dog_temporal_zygomatic_process",
+      "muscle": false
+    },
+    {
+      "source": "upper jaw",
+      "id": "dog_maxilla",
+      "muscle": false
+    },
+    {
+      "source": "Zygomaticus",
+      "id": "dog_zygomaticus",
+      "muscle": true
+    }
+  ]
+}

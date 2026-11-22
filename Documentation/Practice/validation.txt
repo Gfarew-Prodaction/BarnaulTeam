@@ -1,0 +1,133 @@
+Unity 6000.6.8f1 — practice verification, 2026-11-20
+
+PASS practice scene opens
+PASS practice scene included in build
+PASS practice has two tables without study equipment
+PASS practice has baked room lighting
+PASS Beginner/Bones: correct set and reset progress
+PASS Beginner/Bones: parked supply parts without study auto-return
+PASS Beginner/Bones: contour policy
+PASS Beginner/Bones: name policy
+PASS Beginner/Bones: JSON names available
+PASS Beginner/Bones: parts lie above supply tabletop
+PASS Beginner/Bones: parts stay inside usable supply surface
+PASS Beginner/Muscles: correct set and reset progress
+PASS Beginner/Muscles: parked supply parts without study auto-return
+PASS Beginner/Muscles: contour policy
+PASS Beginner/Muscles: name policy
+PASS Beginner/Muscles: JSON names available
+PASS Beginner/Muscles: parts lie above supply tabletop
+PASS Beginner/Muscles: parts stay inside usable supply surface
+PASS Beginner/Brain: correct set and reset progress
+PASS Beginner/Brain: parked supply parts without study auto-return
+PASS Beginner/Brain: contour policy
+PASS Beginner/Brain: name policy
+PASS Beginner/Brain: JSON names available
+PASS Beginner/Brain: parts lie above supply tabletop
+PASS Beginner/Brain: parts stay inside usable supply surface
+PASS Beginner/All: correct set and reset progress
+PASS Beginner/All: parked supply parts without study auto-return
+PASS Beginner/All: contour policy
+PASS Beginner/All: name policy
+PASS Beginner/All: JSON names available
+PASS Beginner/All: parts lie above supply tabletop
+PASS Beginner/All: parts stay inside usable supply surface
+PASS Intermediate/Bones: correct set and reset progress
+PASS Intermediate/Bones: parked supply parts without study auto-return
+PASS Intermediate/Bones: contour policy
+PASS Intermediate/Bones: name policy
+PASS Intermediate/Bones: JSON names available
+PASS Intermediate/Bones: parts lie above supply tabletop
+PASS Intermediate/Bones: parts stay inside usable supply surface
+PASS Intermediate/Muscles: correct set and reset progress
+PASS Intermediate/Muscles: parked supply parts without study auto-return
+PASS Intermediate/Muscles: contour policy
+PASS Intermediate/Muscles: name policy
+PASS Intermediate/Muscles: JSON names available
+PASS Intermediate/Muscles: parts lie above supply tabletop
+PASS Intermediate/Muscles: parts stay inside usable supply surface
+PASS Intermediate/Brain: correct set and reset progress
+PASS Intermediate/Brain: parked supply parts without study auto-return
+PASS Intermediate/Brain: contour policy
+PASS Intermediate/Brain: name policy
+PASS Intermediate/Brain: JSON names available
+PASS Intermediate/Brain: parts lie above supply tabletop
+PASS Intermediate/Brain: parts stay inside usable supply surface
+PASS Intermediate/All: correct set and reset progress
+PASS Intermediate/All: parked supply parts without study auto-return
+PASS Intermediate/All: contour policy
+PASS Intermediate/All: name policy
+PASS Intermediate/All: JSON names available
+PASS Intermediate/All: parts lie above supply tabletop
+PASS Intermediate/All: parts stay inside usable supply surface
+PASS Advanced/Bones: correct set and reset progress
+PASS Advanced/Bones: parked supply parts without study auto-return
+PASS Advanced/Bones: contour policy
+PASS Advanced/Bones: name policy
+PASS Advanced/Bones: JSON names available
+PASS Advanced/Bones: parts lie above supply tabletop
+PASS Advanced/Bones: parts stay inside usable supply surface
+PASS Advanced/Muscles: correct set and reset progress
+PASS Advanced/Muscles: parked supply parts without study auto-return
+PASS Advanced/Muscles: contour policy
+PASS Advanced/Muscles: name policy
+PASS Advanced/Muscles: JSON names available
+PASS Advanced/Muscles: parts lie above supply tabletop
+PASS Advanced/Muscles: parts stay inside usable supply surface
+PASS Advanced/Brain: correct set and reset progress
+PASS Advanced/Brain: parked supply parts without study auto-return
+PASS Advanced/Brain: contour policy
+PASS Advanced/Brain: name policy
+PASS Advanced/Brain: JSON names available
+PASS Advanced/Brain: parts lie above supply tabletop
+PASS Advanced/Brain: parts stay inside usable supply surface
+PASS Advanced/All: correct set and reset progress
+PASS Advanced/All: parked supply parts without study auto-return
+PASS Advanced/All: contour policy
+PASS Advanced/All: name policy
+PASS Advanced/All: JSON names available
+PASS Advanced/All: parts lie above supply tabletop
+PASS Advanced/All: parts stay inside usable supply surface
+PASS incorrect release rejected
+PASS incorrect piece returns to supply and parks
+PASS incorrect rotation rejected
+PASS piece cannot complete a different target
+PASS correct placement accepted
+PASS snap attaches to own slot and updates progress
+PASS installed part follows model rotation and scale
+PASS placed piece can be removed and grabbed again
+PASS regrab cancels return without locking the object
+PASS bone accepts its own pose: frontal bone
+PASS bone accepts its own pose: incisive bone
+PASS bone accepts its own pose: lower jaw
+PASS bone accepts its own pose: nasal bone
+PASS bone accepts its own pose: occipital bone
+PASS bone accepts its own pose: occipital bone 2
+PASS bone accepts its own pose: parietal bone
+PASS bone accepts its own pose: the temporal process of the zygomatic bone
+PASS bone accepts its own pose: The zygomatic process of the temporal bone
+PASS bone accepts its own pose: upper jaw
+PASS complete assembly reaches success
+PASS restart clears success and mistakes
+PASS HurricaneVR silent grab succeeds
+PASS unconditional HVR hook restores dynamics for practice
+PASS HVR release returns and restores repeatable grab state
+PASS return to menu starts
+PASS startup menu loads after practice
+PASS three-mode menu available with reused content
+PASS practice asks difficulty first
+PASS difficulty leads to set selection
+PASS menu selections survive scene transition
+PASS persistent HVR context rebinds to new rig
+PASS learning opens guided study room
+PASS lesson can grab a model part
+PASS lesson tracks grabbed part after detaching from model (step=3, held=True, cached=True)
+PASS lesson advances after releasing the part
+PASS study mode still opens original room
+PASS content service stays single across mode transitions
+SUCCESS
+
+Android Player C# compilation: PASS (0 errors). Roslyn used existing Android Player references/defines; this is not a full APK/IL2CPP build.
+Lighting bake: SUCCESS maps=1 probes=27 reflection=True
+Hardware limits: no physical Quest/controller run. Synthetic HVR grabs, scene transitions, supply packing, placement and completion were tested in Editor Play Mode. Lesson grab tick was synchronous because no physical grip is held.
+Remote content: used existing cache/packaged fallback for menu navigation tests. No server data or TLS behavior was changed.

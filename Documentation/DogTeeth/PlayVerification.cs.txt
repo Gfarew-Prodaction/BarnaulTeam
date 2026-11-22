@@ -1,0 +1,68 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using DataScripts;
+using DG.Tweening;
+using HurricaneVR.Framework.Core;
+using InteracrSystem;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
+
+public static class DogTeethVerification
+{
+ static int phase,checks;static double due;static string report;
+ static readonly string[] Ids={"dog_incisors","dog_canines","dog_premolars","dog_molars"};static readonly int[] Counts={12,4,12,8};
+ static void Check(bool value,string message){checks++;if(!value)throw new Exception(message);}
+ static void Shot(string name,Vector3 position,Vector3 target)
+ {
+  Directory.CreateDirectory("output/teeth");var go=new GameObject("Dental preview");var camera=go.AddComponent<Camera>();camera.enabled=false;camera.nearClipPlane=.005f;camera.farClipPlane=20;camera.fieldOfView=50;camera.GetUniversalAdditionalCameraData().renderPostProcessing=true;camera.transform.position=position;camera.transform.LookAt(target);
+  var rs=UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None).Where(r=>r.transform.root.name.Contains("Rig")).ToArray();foreach(var r in rs)r.forceRenderingOff=true;ClinicFurnitureSetup.SaveCamera(camera,"output/teeth/"+name+".jpg");foreach(var r in rs)if(r)r.forceRenderingOff=false;UnityEngine.Object.DestroyImmediate(go);
+ }
+ public static void Run()
+ {
+  checks=0;report="";EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");var model=GameObject.Find("Dog Head · Layer Model");var teeth=model.GetComponentsInChildren<ElementDog>(true).Where(e=>Ids.Contains(e.Id)).ToArray();Check(teeth.Length==36,"36 saved study teeth");Check(!model.GetComponentsInChildren<ElementDog>(true).Any(e=>e.Id=="dog_teeth"||e.Id=="dog_teeth_2"),"legacy groups removed");
+  Check(!model.GetComponentsInChildren<Text>(true).Any(t=>t.text.Contains("Кости + мышцы")),"model labels renamed");
+  int triangles=teeth.Sum(e=>e.GetComponent<MeshFilter>().sharedMesh.triangles.Length/3);Check(triangles<52000,"optimized scene geometry");
+  for(int i=0;i<4;i++){Check(teeth.Count(e=>e.Id==Ids[i])==Counts[i],"type count "+Ids[i]);foreach(var e in teeth.Where(e=>e.Id==Ids[i])){Check(e.GetComponent<MeshCollider>().convex,"convex collider");Check(e.GetComponent<ElementInfoPresenter>()&&e.GetComponent<OnMoveBackItem>()&&e.GetComponent<ReturningGrabbable>(),"complete interaction");Check(e.GetComponent<ElementInteractionVisuals>().Ghost,"home ghost");}}
+  phase=0;EditorApplication.update+=Tick;EditorApplication.isPlaying=true;due=EditorApplication.timeSinceStartup+4;
+ }
+ static void Tick()
+ {
+  if(EditorApplication.isCompiling||EditorApplication.timeSinceStartup<due)return;
+  try
+  {
+   if(phase==0&&EditorApplication.isPlaying)
+   {
+    var layers=UnityEngine.Object.FindAnyObjectByType<ChoiceLayer>();layers.ShowBones();var teeth=layers.GetComponentsInChildren<ElementDog>().Where(e=>Ids.Contains(e.Id)).ToArray();Check(teeth.Length==36,"teeth shown in bones");var content=RemoteElementContent.Instance;
+    foreach(string id in Ids){Check(content.TryGetData(id,out var data)&&!string.IsNullOrWhiteSpace(data.nameLatin)&&!string.IsNullOrWhiteSpace(data.name),"JSON data "+id);Check(data.images.Length==4,"existing dental gallery");}
+    var catalog=UnityEngine.Object.FindAnyObjectByType<LayerElementCatalog>();Check(catalog.EntryCount==14,"14 logical bone/tooth elements");catalog.Select("dog_canines");Check(teeth.Count(e=>e.GetComponent<ElementInteractionVisuals>().CatalogSelected)==4,"four canines highlighted");catalog.ClearSelection();
+    layers.ShowMuscles();Check(layers.CurrentLayerName=="Мышцы","muscle label");Check(layers.LayerRoots[1].activeSelf&&layers.LayerRoots[2].activeSelf,"rename preserves bones plus muscles");
+    layers.ShowBones();Shot("skull-with-teeth",new Vector3(1.32f,1.35f,-.73f),new Vector3(.78f,1.12f,-1.35f));
+    report+="Study: all 36 named teeth, four groups, JSON names/Latin/gallery, convex colliders, hover/card/return/ghost components, catalogue selection and muscle layer label passed.\n";
+    EditorApplication.isPlaying=false;phase=1;due=EditorApplication.timeSinceStartup+1;
+   }
+   else if(phase==1&&!EditorApplication.isPlaying){EditorSceneManager.OpenScene("Assets/Scenes/PracticeScene.unity");EditorApplication.isPlaying=true;phase=2;due=EditorApplication.timeSinceStartup+4;}
+   else if(phase==2&&EditorApplication.isPlaying)
+   {
+    var session=UnityEngine.Object.FindAnyObjectByType<PracticeSession>();var neurological=UnityEngine.Object.FindAnyObjectByType<NeurologicalCheck>();
+    foreach(PracticeDifficulty difficulty in Enum.GetValues(typeof(PracticeDifficulty)))foreach(PracticeSet set in Enum.GetValues(typeof(PracticeSet)))
+    {
+     session.Begin(difficulty,set);Check(session.TotalCount==(set==PracticeSet.Bones?46:set==PracticeSet.All?72:set==PracticeSet.Brain?9:17),"part count "+set);Check(session.PlacedCount==(difficulty==PracticeDifficulty.Beginner?0:1),"reference preserved");
+     foreach(var p in session.ActivePieces.Where(p=>!p.IsReference)){p.transform.SetPositionAndRotation(p.Slot.transform.position,p.Slot.transform.rotation);Check(p.TryPlaceOrReturn(),"correct target "+p.name);DOTween.CompleteAll(true);}
+     if(session.HasBrain)Check(neurological.Check(session)&&neurological.CurrentReport.IsNormal,"neurological check unaffected");Check(session.IsComplete,"completion "+difficulty+set);
+    }
+    session.Begin(PracticeDifficulty.Beginner,PracticeSet.Bones);Shot("practice-bones-and-teeth",new Vector3(-.6f,1.6f,1.5f),new Vector3(1.3f,1f,-.7f));report+="Practice: saved teeth included in Bones and All; all 12 difficulty/set layouts and complete assembly passed; brain neurological checking preserved.\n";
+    EditorApplication.isPlaying=false;phase=3;due=EditorApplication.timeSinceStartup+1;
+   }
+   else if(phase==3&&!EditorApplication.isPlaying)
+   {
+    EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");Directory.CreateDirectory("Documentation/DogTeeth");File.WriteAllText("Documentation/DogTeeth/validation.txt","PASS "+checks+" assertions\n"+report+"Physical Quest controller input not tested.\n");File.WriteAllText("/tmp/teeth-tests.txt","PASS "+checks+"\n"+report);EditorApplication.update-=Tick;
+   }
+  }
+  catch(Exception e){File.WriteAllText("/tmp/teeth-tests.txt","FAIL "+checks+"\n"+e);EditorApplication.update-=Tick;EditorApplication.isPlaying=false;Debug.LogException(e);}
+ }
+}

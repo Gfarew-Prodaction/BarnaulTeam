@@ -1,0 +1,14 @@
+dog_head_fur_mtl_wolf_a_hair_a_body_001 -> Dog-hair-BaseColor
+dog_head_skin_mtl_ger_shepherd_body_org1 -> Dog-body-BaseColor
+dog_head_skin_mtl_ger_shepherd_head_org1 -> Dog-head-BaseColor
+dog_left_eye_Material -> Dog-head-BaseColor
+dog_left_eye_mtl_ger_shepherd_body_org1 -> Dog-body-BaseColor
+dog_left_eye_mtl_ger_shepherd_head_org1 -> Dog-head-BaseColor
+dog_right_eye_Material_001 -> Dog-head-BaseColor
+dog_right_eye_mtl_ger_shepherd_body_org1_002 -> Dog-body-BaseColor
+dog_right_eye_mtl_ger_shepherd_head_org1_002 -> Dog-head-BaseColor
+dog_skin_inner_mtl_ger_shepherd_mouth_org1 -> Dog-mouth-BaseColor
+Fur enabled; scene saved with existing editor changes preserved.
+Assigned 10 materials.
+
+Rendered preview visually checked; coat and alpha-clipped hair visible.

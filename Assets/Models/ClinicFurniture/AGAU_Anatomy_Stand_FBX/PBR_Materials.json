@@ -1,0 +1,158 @@
+{
+  "AS_Anodized_Blue_2K": {
+    "Base Color": "Textures/AS_Anodized_Blue_2K_BaseColor.png",
+    "Roughness": "Textures/AS_Anodized_Blue_2K_Roughness.png",
+    "Metallic": 0.6600000262260437,
+    "Normal": "Textures/AS_Anodized_Blue_2K_Normal.png",
+    "Alpha": 1.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  },
+  "AS_Blue_Machined_Edge": {
+    "Base Color": [
+      0.07500000298023224,
+      0.18000000715255737,
+      0.33000001311302185,
+      1.0
+    ],
+    "Roughness": 0.25999999046325684,
+    "Metallic": 0.800000011920929,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  },
+  "AS_Satin_Reflector": {
+    "Base Color": [
+      0.6399999856948853,
+      0.6899999976158142,
+      0.7300000190734863,
+      1.0
+    ],
+    "Roughness": 0.23999999463558197,
+    "Metallic": 0.9200000166893005,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  },
+  "AS_White_LED_Ring": {
+    "Base Color": [
+      0.8799999952316284,
+      0.9399999976158142,
+      1.0,
+      1.0
+    ],
+    "Roughness": 0.2800000011920929,
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0,
+    "Emission Color": "Textures/AS_LED_Emission_256.png",
+    "Emission Strength": 3.0
+  },
+  "AS_Textured_Blue_Platform_2K": {
+    "Base Color": "Textures/AS_Textured_Blue_Platform_2K_BaseColor.png",
+    "Roughness": "Textures/AS_Textured_Blue_Platform_2K_Roughness.png",
+    "Metallic": 0.0,
+    "Normal": "Textures/AS_Textured_Blue_Platform_2K_Normal.png",
+    "Alpha": 1.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  },
+  "AS_Black_Rubber_Feet": {
+    "Base Color": [
+      0.009999999776482582,
+      0.013000000268220901,
+      0.01600000075995922,
+      1.0
+    ],
+    "Roughness": "Textures/AS_Rubber_Roughness_512.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  },
+  "AS_Front_Badge_Panel": {
+    "Base Color": [
+      0.01600000075995922,
+      0.054999999701976776,
+      0.125,
+      1.0
+    ],
+    "Roughness": 0.36000001430511475,
+    "Metallic": 0.6499999761581421,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0,
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  },
+  "AS_AGAU_Gold_Transfer_1K": {
+    "Base Color": "Textures/table_agau_gold.png",
+    "Roughness": 0.30000001192092896,
+    "Metallic": 0.5799999833106995,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": "Textures/table_agau_gold.png",
+    "Emission Color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "Emission Strength": 0.0
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "parts": [
+    {
+      "source": "chisels",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.001",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.002",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.003",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.004",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.005",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.006",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.007",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.008",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.009",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.010",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "chisels.011",
+      "id": "dog_incisors",
+      "category": "Bones"
+    },
+    {
+      "source": "fangs",
+      "id": "dog_canines",
+      "category": "Bones"
+    },
+    {
+      "source": "fangs2",
+      "id": "dog_canines",
+      "category": "Bones"
+    },
+    {
+      "source": "fangs3",
+      "id": "dog_canines",
+      "category": "Bones"
+    },
+    {
+      "source": "fangs4",
+      "id": "dog_canines",
+      "category": "Bones"
+    },
+    {
+      "source": "molars",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.001",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.002",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.003",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.004",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.005",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.006",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "molars.007",
+      "id": "dog_molars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.001",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.002",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.003",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.004",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.005",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.006",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.007",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.008",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.009",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.010",
+      "id": "dog_premolars",
+      "category": "Bones"
+    },
+    {
+      "source": "premolars.011",
+      "id": "dog_premolars",
+      "category": "Bones"
+    }
+  ],
+  "originalTriangles": 340259,
+  "runtimeTriangles": 50390
+}

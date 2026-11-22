@@ -1,0 +1,17 @@
+Learning, practice reference and layer catalogue
+
+Scenes: SampleScene (study/learning) and PracticeScene.
+Lighting: neutral white 6500 K, brighter ceiling/working lights, neutral white balance and baked lighting/reflections in both rooms.
+
+Practice:
+Beginner retains all unoccupied target contours. Intermediate and Advanced start with one actual fixed reference piece (largest bounds, bone preferred for All). The reference counts as installed and cannot be grabbed; all other pieces remain on the supply table. Restart reinitializes grab permissions and the reference. An arrow marks the assembly start and disappears after the first player placement. No extra target contours on Intermediate/Advanced.
+
+Learning:
+StudyModePanel installs the 25-step VRLearningGuide when learning is selected in Startup, or when its Learning button is clicked. Steps explain locomotion, both terminals, valid hover, gripping, remote pulling, paired parts, home ghost, tray, model controls, descriptions, photos and practice rules. Tasks report success and wait for Next; Back and Skip step are available. Reposition places the panel in front/left of the current head pose. The tutorial and control help enable the UI pointer away from tables so navigation does not become inaccessible. Ordinary study pointer proximity gating is unchanged.
+Exact model bindings: Y left Secondary toggles locomotion/model editing near the anatomy table. Left stick rotates using its dominant axis. Right stick vertical axis changes uniform scale. X left Primary resets rotation only; A right Primary resets scale only. Both resets apply in model mode. Y or leaving the table restores locomotion. Physical HMD tracking remains active.
+
+Catalogue:
+A second Medical_Terminal_Black is saved in SampleScene at (1.18,.857,-1.55), behind the tray. LayerElementCatalog builds its world-space canvas on the screen and registers it with the HurricaneVR input module. It lists six logical JSON element IDs per page, grouped across split mesh parts. Names refresh from JSON. Clicking a name highlights all corresponding parts cyan for 12 seconds and points an arrow at the element. Clear selection, expiry, layer change and destruction clear the tint. Cached group membership preserves detached/held/tray items in the correct layer. The original grab-availability green hover rules remain higher priority.
+
+No server JSON/schema change is required.
+Verification scripts are retained as text for reproducibility, outside the Unity Editor compilation folder. No full APK or physical Quest headset verification was performed in this task.

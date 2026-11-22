@@ -1,0 +1,39 @@
+using System;
+using System.Linq;
+using System.Reflection;
+using System.IO;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using InteracrSystem;
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Grabbers;
+public static class DogHeadVerification {
+ static int stage;static double next,deadline;static Transform root,part,frame;static OnMoveBackItem back;static Vector3 local;static ElementInteractionVisuals first,second;static HVRGrabbable grab;static HVRHandGrabber hand;
+ public static void Run(){EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");deadline=EditorApplication.timeSinceStartup+90;EditorApplication.update+=Tick;EditorApplication.EnterPlaymode();}
+ static void Check(bool condition,string message){if(!condition)throw new Exception(message);File.AppendAllText("/tmp/dog-v2-checks.txt","PASS "+message+"\n");}
+ static void Call(object o,string method)=>o.GetType().GetMethod(method,BindingFlags.Instance|BindingFlags.NonPublic).Invoke(o,null);
+ static void Tick(){try{
+ if(EditorApplication.timeSinceStartup>deadline)throw new Exception("Timeout");
+ if(!EditorApplication.isPlaying||EditorApplication.isCompiling)return;
+ if(UnityEngine.InputSystem.Keyboard.current==null)UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Keyboard>();
+ if(UnityEngine.InputSystem.Mouse.current==null)UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Mouse>();
+ if(Time.time<1||EditorApplication.timeSinceStartup<next)return;
+ if(stage==0){
+ root=GameObject.Find("Dog Head · Layer Model").transform;var items=root.GetComponentsInChildren<ElementDog>(true);Check(items.Length==43,"43 persisted anatomy parts");
+ Check(items.All(x=>x.Data!=null&&!string.IsNullOrEmpty(x.Data.name)),"all part IDs resolve JSON names");
+ Check(items.Where(x=>x.gameObject.activeInHierarchy).All(x=>x.GetComponent<Rigidbody>().isKinematic),"all anatomy bodies parked");
+ Check(items.All(x=>x.GetComponent<ElementInteractionVisuals>().Ghost),"every part has prebuilt silhouette");
+ var controller=root.GetComponent<LayerModelController>();var player=UnityEngine.Object.FindFirstObjectByType<HurricaneVR.Framework.Core.Player.HVRPlayerController>();
+ typeof(LayerModelController).GetField("_player",BindingFlags.Instance|BindingFlags.NonPublic).SetValue(controller,player);
+ var movement=player.MovementEnabled;var rotation=player.RotationEnabled;Call(controller,"Enter");Check(!player.MovementEnabled&&!player.RotationEnabled,"editing blocks walking and turning");Call(controller,"Exit");Check(player.MovementEnabled==movement&&player.RotationEnabled==rotation,"editing restores movement state");
+ var scale=root.localScale;var rot=root.localRotation;controller.ApplyModelInput(new Vector2(1,0),1,1);Check(Quaternion.Angle(rot,root.localRotation)>60,"left stick rotates");Check(root.localScale.x>scale.x,"right stick scales");controller.ApplyModelInput(Vector2.zero,1,100);Check(root.localScale.x<=scale.x*1.801f,"scale maximum clamp");controller.ResetRotation();controller.ResetScale();Check(Quaternion.Angle(rot,root.localRotation)<.01f&&Vector3.Distance(scale,root.localScale)<.001f,"X/A rotation and scale resets");
+ var choice=root.GetComponent<ChoiceLayer>();choice.ShowBones();Check(root.Find("Bones and teeth").gameObject.activeSelf&&!root.Find("Muscles").gameObject.activeSelf,"bones layer");choice.ShowBrain();Check(root.Find("Brain").gameObject.activeSelf&&!root.Find("Bones and teeth").gameObject.activeSelf,"brain layer");choice.ShowMuscles();
+ var pair=root.GetComponentsInChildren<ElementInteractionVisuals>().Where(v=>v.GroupId=="dog_temporalis").ToArray();Check(pair.Length==2,"split muscle pair association");first=pair[0];second=pair[1];grab=first.GetComponent<HVRGrabbable>();hand=UnityEngine.Object.FindFirstObjectByType<HVRHandGrabber>();
+ typeof(HVRGrabberBase).GetProperty("HoverTarget").SetValue(hand,grab);grab.HoverEnter.Invoke(hand,grab);Call(first,"LateUpdate");Check(first.IsHoverHighlighted,"hand hover turns green");grab.HoverExit.Invoke(hand,grab);typeof(HVRGrabberBase).GetProperty("HoverTarget").SetValue(hand,null);grab.HandGrabbers.Add(hand);Call(second,"LateUpdate");Check(second.IsRelatedHighlighted,"held muscle highlights counterpart");grab.HandGrabbers.Clear();Call(second,"LateUpdate");Check(!second.IsRelatedHighlighted,"counterpart highlight clears after release");
+ part=first.transform;frame=part.parent;local=part.localPosition;back=part.GetComponent<OnMoveBackItem>();back.PrepareForGrab();part.position=new Vector3(-.5f,1.2f,0);Physics.SyncTransforms();Call(first,"LateUpdate");Check(first.Ghost.activeSelf,"silhouette remains at home while part moves");controller.ApplyModelInput(new Vector2(1,0),.5f,.7f);Call(back,"BeginReturn");stage=1;next=EditorApplication.timeSinceStartup+1.2;
+ }else{
+ Check(part.parent==frame&&Vector3.Distance(part.localPosition,local)<.002f,"returns to home after model rotates and scales");Check(Vector3.Distance(part.localScale,Vector3.one)<.002f,"returned part matches resized model");Call(first,"LateUpdate");Check(!first.Ghost.activeSelf,"silhouette hides after return");Check(part.GetComponent<Rigidbody>().isKinematic,"returned part parked");back.PrepareForGrab();Check(!part.GetComponent<Rigidbody>().isKinematic,"returned part can be grabbed again");root.GetComponent<LayerModelController>().ResetRotation();root.GetComponent<LayerModelController>().ResetScale();File.AppendAllText("/tmp/dog-v2-checks.txt","SUCCESS\n");EditorApplication.Exit(0);
+ }
+ }catch(Exception ex){File.AppendAllText("/tmp/dog-v2-checks.txt","FAIL "+ex+"\n");EditorApplication.Exit(1);}}
+}

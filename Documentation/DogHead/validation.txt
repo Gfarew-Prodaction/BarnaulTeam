@@ -1,0 +1,25 @@
+PASS 43 persisted anatomy parts
+PASS all part IDs resolve JSON names
+PASS all anatomy bodies parked
+PASS every part has prebuilt silhouette
+PASS editing blocks walking and turning
+PASS editing restores movement state
+PASS left stick rotates
+PASS right stick scales
+PASS scale maximum clamp
+PASS X/A rotation and scale resets
+PASS bones layer
+PASS brain layer
+PASS split muscle pair association
+PASS hand hover turns green
+PASS held muscle highlights counterpart
+PASS counterpart highlight clears after release
+PASS silhouette remains at home while part moves
+PASS returns to home after model rotates and scales
+PASS returned part matches resized model
+PASS silhouette hides after return
+PASS returned part parked
+PASS returned part can be grabbed again
+SUCCESS
+Player C# compile: exit 0 (obsolete API warnings remain in HurricaneVR).
+Batch-mode HVR editor helpers initially reported missing keyboard/mouse before virtual input devices were added; no XR hardware was attached.

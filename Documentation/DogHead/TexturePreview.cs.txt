@@ -1,0 +1,33 @@
+using System;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using InteracrSystem;
+[InitializeOnLoad]
+public static class DogTexturePreview
+{
+ static DogTexturePreview(){EditorApplication.delayCall+=Run;}
+ static void Run(){
+  if(!File.Exists("/tmp/dog-texture-preview.request"))return;File.Delete("/tmp/dog-texture-preview.request");
+  var preview=EditorSceneManager.NewPreviewScene();
+  try{
+   var root=GameObject.Find("Dog Head · Layer Model");var skin=root.transform.Find("Skin");Bounds bounds=default;bool first=true;
+   foreach(var item in skin.GetComponentsInChildren<ElementDog>(true)){
+    var source=item.GetComponent<MeshRenderer>();var mesh=item.GetComponent<MeshFilter>();var go=new GameObject(item.name);SceneManager.MoveGameObjectToScene(go,preview);
+    go.transform.SetPositionAndRotation(item.transform.position-root.transform.position,item.transform.rotation);go.transform.localScale=item.transform.lossyScale;
+    go.AddComponent<MeshFilter>().sharedMesh=mesh.sharedMesh;var renderer=go.AddComponent<MeshRenderer>();renderer.sharedMaterials=source.sharedMaterials;
+    if(first){bounds=renderer.bounds;first=false;}else bounds.Encapsulate(renderer.bounds);
+   }
+   foreach(var angle in new[]{new Vector3(35,-30,0),new Vector3(-5,150,0)}){var go=new GameObject("Preview light");SceneManager.MoveGameObjectToScene(go,preview);var l=go.AddComponent<Light>();l.type=LightType.Directional;l.intensity=1.4f;go.transform.rotation=Quaternion.Euler(angle);}
+   var cameraGO=new GameObject("Preview camera");SceneManager.MoveGameObjectToScene(cameraGO,preview);var cam=cameraGO.AddComponent<Camera>();cam.scene=preview;
+   cam.backgroundColor=new Color(.87f,.91f,.93f);cam.clearFlags=CameraClearFlags.SolidColor;cam.orthographic=true;cam.orthographicSize=bounds.extents.magnitude*.95f;cam.nearClipPlane=.001f;cam.farClipPlane=10;
+   cam.transform.position=bounds.center+new Vector3(-.6f,.15f,-1).normalized*bounds.extents.magnitude*3;cam.transform.LookAt(bounds.center);
+   var rt=new RenderTexture(1200,1000,24);cam.targetTexture=rt;cam.Render();var old=RenderTexture.active;RenderTexture.active=rt;var tex=new Texture2D(1200,1000,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,1200,1000),0,0);tex.Apply();
+   Directory.CreateDirectory("output");File.WriteAllBytes("output/dog-textured-preview.jpg",tex.EncodeToJPG(93));RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(tex);cam.targetTexture=null;rt.Release();UnityEngine.Object.DestroyImmediate(rt);
+   File.WriteAllText("/tmp/dog-texture-preview-result.txt","SUCCESS");
+  }catch(Exception ex){File.WriteAllText("/tmp/dog-texture-preview-result.txt","FAIL "+ex);}finally{EditorSceneManager.ClosePreviewScene(preview);}
+ }
+}

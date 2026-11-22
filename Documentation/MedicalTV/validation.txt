@@ -1,0 +1,7 @@
+PASS 235 assertions
+Study, paged controls, all 25 learning steps and return navigation passed.
+Practice progress, help, restart and anchored reference passed.
+Physical Quest headset not tested.
+Android player C# compilation: PASS (0 errors).
+Both room lightmaps and reflection probes rebaked successfully.
+Visual verification: study, all three controls pages, first/last learning pages, practice and room placement.

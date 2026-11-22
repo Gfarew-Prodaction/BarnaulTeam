@@ -1,0 +1,6 @@
+PASS 595 assertions
+Study: all 36 named teeth, four groups, JSON names/Latin/gallery, convex colliders, hover/card/return/ghost components, catalogue selection and muscle layer label passed.
+Practice: saved teeth included in Bones and All; all 12 difficulty/set layouts and complete assembly passed; brain neurological checking preserved.
+Physical Quest controller input not tested.
+Android player C# compilation: PASS (0 errors).
+Visual check: tooth rows fit both jaws; old merged geometry removed; renamed layer and catalogue groups visible.

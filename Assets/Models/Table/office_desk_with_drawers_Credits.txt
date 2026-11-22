@@ -1,0 +1,5 @@
+Office Desk With Drawers
+Author: Blaž Mraz (Mraz3D)
+Source: https://sketchfab.com/3d-models/office-desk-with-drawers-e96769051078452bba7057473eceb587
+License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Changes: GLB converted to FBX; texture UV transforms baked; URP materials and metallic/smoothness maps prepared.

@@ -1,0 +1,68 @@
+{
+  "VT_Brushed_Stainless_2K": {
+    "Base Color": "Textures/VT_Steel_BaseColor_2048.png",
+    "Roughness": "Textures/VT_Steel_Roughness_2048.png",
+    "Metallic": 1.0,
+    "Normal": "Textures/VT_Steel_Normal_2048.png",
+    "Alpha": 1.0
+  },
+  "VT_Black_Rubber": {
+    "Base Color": [
+      0.012000000104308128,
+      0.014000000432133675,
+      0.013000000268220901,
+      1.0
+    ],
+    "Roughness": "Textures/VT_Black_Rubber_Roughness.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "VT_Fastener_Recess": {
+    "Base Color": [
+      0.02500000037252903,
+      0.029999999329447746,
+      0.029999999329447746,
+      1.0
+    ],
+    "Roughness": 0.47999998927116394,
+    "Metallic": 0.699999988079071,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "VT_Forest_Green_Polymer": {
+    "Base Color": [
+      0.02800000086426735,
+      0.15000000596046448,
+      0.03500000014901161,
+      1.0
+    ],
+    "Roughness": "Textures/VT_Forest_Green_Polymer_Roughness.png",
+    "Metallic": 0.0,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": 1.0
+  },
+  "VT_AGAU_Gold_Transfer_1K": {
+    "Base Color": "Textures/table_agau_gold.png.001.png",
+    "Roughness": 0.33000001311302185,
+    "Metallic": 0.7799999713897705,
+    "Normal": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Alpha": "Textures/table_agau_gold.png.001.png"
+  }
+}

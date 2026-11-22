@@ -1,0 +1,98 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using DG.Tweening;
+using HurricaneVR.Framework.Core;
+using InteracrSystem;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
+
+public static class NeurologyVerification
+{
+ static int phase,checks;static double due;static string report;
+ static void Check(bool condition,string name){checks++;if(!condition)throw new Exception(name);}
+ static object Get(object o,string field)=>o.GetType().GetField(field,BindingFlags.NonPublic|BindingFlags.Instance).GetValue(o);
+ static object Call(object o,string method,params object[] values)=>o.GetType().GetMethod(method,BindingFlags.NonPublic|BindingFlags.Instance).Invoke(o,values);
+ static Button Button(Canvas c,string label)=>c.GetComponentsInChildren<Button>(true).First(b=>b.GetComponentInChildren<Text>().text==label);
+ static PracticePiece Part(PracticeSession session,string id)=>session.ActivePieces.First(p=>p.GetComponent<ElementDog>().Id==id);
+ static void Commit(PracticePiece p,Vector3 offset,float yaw=0)
+ {
+  if(p.IsReference)return;if(p.IsPlaced||p.IsAttempted)p.PrepareForGrab();p.transform.SetPositionAndRotation(p.Slot.transform.position+offset,p.Slot.transform.rotation*Quaternion.Euler(0,yaw,0));Check(p.TryPlaceOrReturn(),"commit placement");DOTween.CompleteAll(true);
+ }
+ static void Remove(PracticePiece p){p.PrepareForGrab();p.transform.position=p.SourcePosition;p.transform.rotation=p.SourceRotation;p.TryPlaceOrReturn();DOTween.CompleteAll(true);}
+ static void Shot(string name,Vector3 position,Vector3 target)
+ {
+  Directory.CreateDirectory("output/neurology");var go=new GameObject("Neurology preview");var camera=go.AddComponent<Camera>();camera.enabled=false;camera.nearClipPlane=.02f;camera.farClipPlane=30;camera.fieldOfView=60;if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name=="Startup"){camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=MedicalUITheme.Screen;}camera.GetUniversalAdditionalCameraData().renderPostProcessing=true;camera.transform.position=position;camera.transform.LookAt(target);
+  var renderers=UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None).Where(r=>r.transform.root.name.Contains("Rig")).ToArray();foreach(var r in renderers)r.forceRenderingOff=true;
+  ClinicFurnitureSetup.SaveCamera(camera,"output/neurology/"+name+".jpg");foreach(var r in renderers)if(r)r.forceRenderingOff=false;UnityEngine.Object.DestroyImmediate(go);
+ }
+ static void TVShot(string name){var tv=UnityEngine.Object.FindAnyObjectByType<MedicalTVScreen>();Shot(name,tv.Screen.position-tv.Screen.forward*1.9f,tv.Screen.position);}
+ public static void Run()
+ {
+  checks=0;report="";EditorSceneManager.OpenScene("Assets/Scenes/PracticeScene.unity");Check(UnityEngine.Object.FindAnyObjectByType<NeurologicalCheck>(),"saved check controller");Check(UnityEngine.Object.FindObjectsByType<NeurologicalDog>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length==1,"one saved patient");
+  var clips=AssetDatabase.LoadAllAssetsAtPath(NeurologySetup.Folder+"/GermanShepherd_Neurology.fbx").OfType<AnimationClip>().Where(c=>!c.name.StartsWith("__preview__")).ToArray();Check(clips.Length==6&&clips.All(c=>c.length>1.9f),"six 2 second skeletal clips");
+  phase=0;EditorApplication.update+=Tick;EditorApplication.isPlaying=true;due=EditorApplication.timeSinceStartup+4;
+ }
+ static void Tick()
+ {
+  if(EditorApplication.isCompiling||EditorApplication.timeSinceStartup<due)return;
+  try
+  {
+   if(phase==0&&EditorApplication.isPlaying)
+   {
+    var session=UnityEngine.Object.FindAnyObjectByType<PracticeSession>();var check=UnityEngine.Object.FindAnyObjectByType<NeurologicalCheck>();var dog=UnityEngine.Object.FindObjectsByType<NeurologicalDog>(FindObjectsInactive.Include,FindObjectsSortMode.None).First();
+    session.Begin(PracticeDifficulty.Beginner,PracticeSet.Brain);Check(session.ActivePieces.Count==9,"nine physical brain parts in eight regions");Check(!dog.gameObject.activeInHierarchy,"patient initially hidden");
+    var canvas=(Canvas)Get(session,"_panel");Check(Button(canvas,"Проверка").gameObject.activeInHierarchy,"brain check button visible");Button(canvas,"Проверка").onClick.Invoke();
+    Check(check.CurrentReport.MissingCount==9&&!check.CurrentReport.IsNormal,"incomplete brain checked");Check(check.CurrentReport.Scenarios.Count==5&&!check.CurrentReport.Scenarios.Contains(NeurologicalScenario.Normal),"all missing scenarios retained");
+    foreach(var p in session.ActivePieces)Commit(p,Vector3.zero);Check(check.CurrentReport==null&&!dog.gameObject.activeInHierarchy,"editing invalidates report");Check(session.SubmittedCount==9,"all committed");Check(session.PlacedCount==0,"brain waits for manual check");
+    Check(check.Check(session)&&check.CurrentReport.IsNormal&&session.IsComplete,"correct brain normal and complete");Check(dog.Scenario==NeurologicalScenario.Normal,"normal dog clip");TVShot("normal-result");check.Close();Check(canvas.GetComponentsInChildren<Text>().Any(t=>t.text.Contains("Ошибок мозга: 0")),"checked score shown on practice dashboard");TVShot("practice-checked");check.Check(session);
+    var animator=dog.GetComponentInChildren<Animator>();Check(animator&&animator.runtimeAnimatorController&&animator.avatar.isValid,"valid generic rig");animator.Update(.4f);var foot=animator.GetComponentsInChildren<Transform>().First(t=>t.name=="front_shin.L");var footNormal=foot.localRotation;var normalHead=animator.GetComponentsInChildren<Transform>().First(t=>t.name=="Head").localRotation;dog.Play(NeurologicalScenario.CerebellarAtaxia);animator.Update(.4f);Check(Quaternion.Angle(footNormal,foot.localRotation)>5,"ataxia skeletal motion differs");dog.Play(NeurologicalScenario.Normal);animator.Update(.4f);Shot("normal-dog",new Vector3(-.6f,1.05f,2.15f),dog.transform.position+Vector3.up*.4f);
+    var bulbs=session.ActivePieces.Where(p=>p.GetComponent<ElementDog>().Id=="dog_olfactory_bulbs").ToArray();Check(bulbs.Length==2,"split olfactory bulbs");Remove(bulbs[0]);check.Check(session);Check(check.CurrentReport.MissingCount==1&&!bulbs[0].IsPlaced&&bulbs[1].IsPlaced,"same-ID parts assessed independently");Commit(bulbs[0],Vector3.zero);Commit(bulbs[1],Vector3.zero,110);check.Check(session);Check(check.CurrentReport.MisplacedCount==1&&bulbs[0].IsPlaced&&!bulbs[1].IsPlaced,"same-ID wrong rotation isolated");Commit(bulbs[1],Vector3.zero);check.Check(session);
+    var left=Part(session,"dog_left_hemisphere");Commit(left,new Vector3(.15f,0,0),90);var wrongPosition=left.transform.position;Check(left.IsAttempted&&!left.IsMoving&&Vector3.Distance(left.transform.position,wrongPosition)<.001f,"wrong placement remains");Check(check.Check(session)&&check.CurrentReport.MisplacedCount==1&&check.CurrentScenario==NeurologicalScenario.CircleLeft,"misplaced left hemisphere");
+    dog.Animate(0);float yaw=dog.transform.eulerAngles.y;dog.Animate(.5f);Check(Mathf.DeltaAngle(yaw,dog.transform.eulerAngles.y)<-10,"left circles left");TVShot("left-result");
+    Commit(left,Vector3.zero);var right=Part(session,"dog_right_hemisphere");Remove(right);Check(check.Check(session)&&check.CurrentReport.MissingCount==1&&check.CurrentScenario==NeurologicalScenario.CircleRight,"missing right hemisphere");dog.Animate(0);yaw=dog.transform.eulerAngles.y;dog.Animate(.5f);Check(Mathf.DeltaAngle(yaw,dog.transform.eulerAngles.y)>10,"right circles right");
+    Commit(left,new Vector3(.15f,0,0),90);Commit(Part(session,"dog_cerebellum"),Vector3.zero,120);Remove(Part(session,"dog_pons"));Check(check.Check(session)&&check.CurrentReport.Scenarios.Count==4,"multiple issues sequenced");
+    while(check.CurrentScenario!=NeurologicalScenario.CerebellarAtaxia)check.SelectScenario(1);animator.Update(.4f);Shot("cerebellar-dog",new Vector3(-.6f,1.05f,2.15f),dog.transform.position+Vector3.up*.4f);TVShot("cerebellar-result");
+    while(check.CurrentScenario!=NeurologicalScenario.VestibularAtaxia)check.SelectScenario(1);animator.Update(.4f);var head=animator.GetComponentsInChildren<Transform>().First(t=>t.name=="Head");Check(Quaternion.Angle(normalHead,head.localRotation)>10,"vestibular head tilt clip");TVShot("vestibular-result");Shot("patient-room",new Vector3(-.9f,1.65f,2.25f),new Vector3(.85f,1.05f,-.4f));
+    check.Close();foreach(var p in session.ActivePieces)Commit(p,Vector3.zero);Remove(Part(session,"dog_diencephalon"));check.Check(session);Check(check.CurrentScenario==NeurologicalScenario.ReviewRequired&&!check.CurrentReport.IsNormal,"unmapped part not falsely normal");
+    session.Begin(PracticeDifficulty.Beginner,PracticeSet.Brain);left=Part(session,"dog_left_hemisphere");left.transform.position=left.SourcePosition;left.TryPlaceOrReturn();Check(left.IsMoving&&!check.Check(session),"moving pieces block check");DOTween.CompleteAll(true);
+    foreach(PracticeDifficulty difficulty in Enum.GetValues(typeof(PracticeDifficulty)))foreach(PracticeSet set in Enum.GetValues(typeof(PracticeSet)))
+    {
+     session.Begin(difficulty,set);Check(!dog.gameObject.activeInHierarchy&&check.CurrentReport==null,"restart clears patient/report");Check(session.PlacedCount==(difficulty==PracticeDifficulty.Beginner?0:1),"fixed reference retained");
+     foreach(var p in session.ActivePieces.Where(p=>!p.IsReference))Commit(p,Vector3.zero);
+     if(session.HasBrain){Check(check.Check(session)&&check.CurrentReport.IsNormal,"brain assessment across difficulty/set");}else{Check(!check.Check(session),"no neuro check without brain");Check(!Button(canvas,"Проверка").gameObject.activeSelf,"button hidden without brain");}
+     Check(session.IsComplete,"completion "+difficulty+set);
+    }
+    report+="Brain: missing/misplaced/correct, left/right direction, cerebellar and vestibular clips, sequential deficits, unmapped findings, movement guard, correction and reset passed. All 12 difficulty/set combinations complete.\n";
+    EditorApplication.isPlaying=false;phase=1;due=EditorApplication.timeSinceStartup+1;
+   }
+   else if(phase==1&&!EditorApplication.isPlaying){EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");EditorApplication.isPlaying=true;phase=2;due=EditorApplication.timeSinceStartup+4;}
+   else if(phase==2&&EditorApplication.isPlaying)
+   {
+    var tv=UnityEngine.Object.FindAnyObjectByType<MedicalTVScreen>();Check(tv.CurrentPage,"study page on TV");Check(tv.CurrentPage.transform.Find("Background").GetComponent<Image>().color==MedicalUITheme.Screen,"TV navy theme");TVShot("study-tv");
+    var catalog=UnityEngine.Object.FindAnyObjectByType<LayerElementCatalog>();var c=catalog.GetComponentsInChildren<Canvas>().First();Check(c.transform.Find("Background").GetComponent<Image>().color==MedicalUITheme.Paper,"catalog paper theme");Check(c.GetComponentsInChildren<Button>().All(b=>b.GetComponent<Image>().sprite==MedicalUITheme.Rounded),"rounded catalogue buttons");
+    var cameraPosition=catalog.Screen.position-catalog.Screen.forward*.6f;Shot("catalogue",cameraPosition,catalog.Screen.position);
+    Button(tv.CurrentPage,"Обучение").onClick.Invoke();phase=3;due=EditorApplication.timeSinceStartup+1;
+   }
+   else if(phase==3&&EditorApplication.isPlaying)
+   {
+    var guide=UnityEngine.Object.FindAnyObjectByType<VRLearningGuide>();Check(guide&&guide.StepCount==26,"tutorial includes neurological check");Call(guide,"Enter",24);TVShot("learning-neurology");report+="UI: study TV, paper catalogue, rounded buttons and updated 26-step tutorial passed.\n";EditorApplication.isPlaying=false;phase=4;due=EditorApplication.timeSinceStartup+1;
+   }
+   else if(phase==4&&!EditorApplication.isPlaying){EditorSceneManager.OpenScene("Assets/Scenes/Startup.unity");EditorApplication.isPlaying=true;phase=5;due=EditorApplication.timeSinceStartup+3;}
+   else if(phase==5&&EditorApplication.isPlaying)
+   {
+    var startup=UnityEngine.Object.FindAnyObjectByType<StartupFlow>();var pageEnum=startup.GetType().GetNestedType("Page",BindingFlags.NonPublic);Call(startup,"Switch",Enum.Parse(pageEnum,"Modes"));var canvas=startup.GetComponentsInChildren<Canvas>().First();Check(canvas.GetComponent<Image>().color==MedicalUITheme.Paper,"startup theme");
+    Shot("main-menu",new Vector3(0,1.55f,0),new Vector3(0,1.55f,2));report+="Startup: themed three-mode menu preserved.\n";EditorApplication.isPlaying=false;phase=6;due=EditorApplication.timeSinceStartup+1;
+   }
+   else if(phase==6&&!EditorApplication.isPlaying)
+   {
+    EditorSceneManager.OpenScene("Assets/Scenes/PracticeScene.unity");Directory.CreateDirectory("Documentation/Neurology");File.WriteAllText("Documentation/Neurology/validation.txt","PASS "+checks+" assertions\n"+report+"Physical Quest controller input not tested.\n");File.WriteAllText("/tmp/neuro-tests.txt","PASS "+checks+"\n"+report);EditorApplication.update-=Tick;
+   }
+  }
+  catch(Exception e){File.WriteAllText("/tmp/neuro-tests.txt","FAIL "+checks+"\n"+e);EditorApplication.update-=Tick;EditorApplication.isPlaying=false;Debug.LogException(e);}
+ }
+}
